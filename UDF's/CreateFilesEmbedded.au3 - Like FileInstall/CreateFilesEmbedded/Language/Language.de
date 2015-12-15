@@ -1,0 +1,31 @@
+; #INDEX# =======================================================================================================================
+; Title .........: CreateFilesEmbedded™
+; Module ........: Language
+; Author ........: skin27
+; Link ..........: http://www.autoitscript.com/forum/topic/132564-createfilesembeddedau3-like-fileinstall/page__st__20#entry1019239
+; Language ......: Dutch (Standard)
+; ===============================================================================================================================
+
+$a_language[1] = Opties voor het output bestand.
+$a_language[2] = Genereer een functie op basis van de naam van het output bestand.
+$a_language[3] = Voeg voorbeelden voor een User Defined Functions (UDF) toe.
+$a_language[4] = Genereer alleen een bestand met de binaire data.
+$a_language[5] = LZNT compressie native Windows toevoegen.
+$a_language[6] = Compressie niveau
+$a_language[7] = &Open bestand
+$a_language[8] = Voeg bestand toe
+$a_language[9] = Test
+$a_language[10] = Standaard
+$a_language[11] = Voortgang van de conversie:
+$a_language[12] = Sluiten
+$a_language[13] = Geconverteerde regels
+$a_language[14] = Kies een bestand
+$a_language[15] = Bestand
+$a_language[16] = Nee!
+$a_language[17] = 'Test alleen met de optie: "Genereer een functie op basis van de naam van het output bestand" geactiveerd!'
+$a_language[18] = Een moment, genereer het bestand. AU3 indeling->
+$a_language[19] = Sla het bestand op na generatie
+$a_language[20] = Comprimeer het bestand...
+$a_language[21] = Voltooid!
+$a_language[22] = Bestand
+$a_language[23] = AU3 indeling is gegenereerd voor.

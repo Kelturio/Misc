@@ -1,0 +1,18 @@
+FFShowPixels is a tool that will help you to manage list of colors, specially handy 
+if you're using FastFind. 
+
+You can group colors into categories, each category produce a named list. 
+
+With this tool, you can easily see which (and how many) pixels have the different 
+colors in your tree, either the colors you've checked, or a full category, 
+or a single color. 
+With context menu within the tree, you can make several actions on a specific color or 
+a full category. 
+
+Of course, you can save and reload your color lists, and also merge different lists. 
+
+Best of all, FFShowPixel can automatically generate code (either in AutoIt .au3 format 
+or .cpp/.h). 
+
+Check "about..." in order to have some basic instructions. 
+

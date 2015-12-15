@@ -1,0 +1,1846 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head> <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+	<meta name="description" content="Bitcoin Exchange Watcher program V 1.5.2 [Open source]">
+	<meta name="keywords" content="PHP, MySQL, bulletin, board, free, open, source, smf, simple, machines, forum">
+	<script language="JavaScript" type="text/javascript" src="_post-Dateien/script.js"></script>
+	<script language="JavaScript" type="text/javascript"><!-- // --><![CDATA[
+		var smf_theme_url = "https://bitcointalk.org/Themes/custom1";
+		var smf_images_url = "https://bitcointalk.org/Themes/custom1/images";
+		var smf_scripturl = "https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;";
+		var smf_iso_case_folding = false;
+		var smf_charset = "ISO-8859-1";
+	// ]]></script>
+	<title>Bitcoin Exchange Watcher program V 1.5.2 [Open source]</title>
+	<link rel="stylesheet" type="text/css" href="_post-Dateien/style.css">
+	 <!--[if !IE]> -->
+	 <link rel="stylesheet" type="text/css" media="screen and (max-width: 600px)" href="_post-Dateien/mobile.css">
+	 <!-- <![endif]-->
+	<link rel="stylesheet" type="text/css" href="_post-Dateien/print.css" media="print"><style type="text/css">
+@font-face {
+    font-family: 'GothamBold';
+    src: url('Gotham-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+.bfl {font-family: verdana, sans-serif;					font-weight: bold;					font-size: 18px;					height: 45px;					line-height: 45px;					padding: 8px;					padding-left: 10px;					padding-right:      10px;    					margin-bottom:      20px;         					border:             1px solid #000000;    					border-radius:      10px;         					color:              #FFFFFF;         					border-color:       #FFFFFF; background-color:white}
+.bfl:hover {text-decoration:none;color:black}
+.bfl:link {text-decoration:none;color:black}
+.bfl:visited {text-decoration:none;color:black}
+
+.bitmillions {
+	display: inline-block;
+	width:737px;
+	height:42px;
+	font-family: Verdana, Geneva, sans-serif;
+	font-weight: bold;
+	font-size: 16px;
+	border: 1px solid #205000;
+	border-radius: 10px;
+	background-image: linear-gradient(top, #4eb606 0%, #4eb606 100%);
+	background-image: -o-linear-gradient(top, #4eb606 0%, #4eb606 100%);
+	background-image: -moz-linear-gradient(top, #4eb606 0%, #2f6e04 100%);
+	background-image: -ms-linear-gradient(top, #4eb606 0%, #4eb606 100%);
+	background-image: -webkit-linear-gradient(top, #4eb606 0%, #2f6e04 100%);
+	background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #2f6e04), color-stop(1, #4eb606));
+	position:relative;
+	letter-spacing:-1px;
+}
+
+.bitmillions a {
+	color:#fff;
+	text-shadow: 1px 1px 2px #000;
+	text-decoration:none;
+}
+
+.bitmillions .title {
+	position:absolute;
+	top:6px;
+	left:12px;
+	color:#fde765;
+	font-size:22px;
+}
+
+.bitmillions .text {
+	position:absolute;
+	top:0;
+	left:195px;
+	height:32px;
+	padding:10px 0 0 8px;
+	border-left: solid 1px #205000;
+}
+
+.bitmillions .button {
+	position:absolute;
+	top:5px; right:8px;
+	width:114px;
+	height:27px;
+	text-align:center;
+	padding-top:3px;
+	border: 1px solid #7a000a;
+	border-radius: 5px;
+	background-image: linear-gradient(top, #d00012 0%, #d00012 100%);
+	background-image: -o-linear-gradient(top, #d00012 0%, #d00012 100%);
+	background-image: -moz-linear-gradient(top, #d00012 0%, #89000c 100%);
+	background-image: -ms-linear-gradient(top, #d00012 0%, #d00012 100%);
+	background-image: -webkit-linear-gradient(top, #d00012 0%, #89000c 100%);
+	background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #89000c), color-stop(1, #d00012));
+}
+
+#bitstart {
+background-color: yellow;
+border: 1px solid black;
+border-radius: 2px;
+color: black;
+font-family: "verdana", sans-serif;
+font-size: 18px;
+font-weight: 700;
+height: 45px;
+line-height: 45px;
+text-align:center;
+padding: 5px 5px;
+}
+
+.bitfunder {
+font-family: verdana, sans-serif;
+font-weight: bold;
+font-size: 18px;
+height: 45px;
+line-height: 45px;
+padding: 8px;
+padding-left: 10px;
+padding-right: 10px;
+margin-bottom: 20px;
+border: 1px solid #000000;
+border-radius: 10px;
+color: #FFFFFF;
+border-color: #FFFFFF;
+background-color: white;
+}
+</style>
+
+	<link rel="help" href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;action=help" target="_blank">
+	<link rel="search" href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;action=search">
+	<link rel="contents" href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;">
+	<link rel="alternate" type="application/rss+xml" title="Bitcoin Forum - RSS" href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;type=rss;action=.xml">
+	<link rel="prev" href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;topic=14818.0;prev_next=prev">
+	<link rel="next" href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;topic=14818.0;prev_next=next">
+	<link rel="index" href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;board=1.0">
+<script language="JavaScript" type="text/javascript"><!-- // -->
+		function showhide(msgnr)
+		{
+			if (document.getElementById("message"+msgnr).style.display == "")
+			    {document.getElementById("message"+msgnr).style.display = "none";
+			     document.getElementById("ignmsgbttns"+msgnr).style.visibility = "hidden";
+			     document.getElementById("ignoremessage"+msgnr).style.display = "";
+			     document.getElementById("ignfooter"+msgnr).style.display = "none";
+			     document.getElementById("showhide"+msgnr).src = "https://bitcointalk.org/Themes/custom1/images/english/ignshow.gif";
+			     document.getElementById("showhide"+msgnr).alt = "Show";
+			     document.getElementById("ignprofile"+msgnr).style.display = "none";
+			    }
+			    else
+			    {document.getElementById("message"+msgnr).style.display = "";
+			     document.getElementById("ignmsgbttns"+msgnr).style.visibility = "visible";
+			     document.getElementById("ignoremessage"+msgnr).style.display = "none";
+			     document.getElementById("ignfooter"+msgnr).style.display = "";
+			     document.getElementById("showhide"+msgnr).src = "https://bitcointalk.org/Themes/custom1/images/english/ignhide.gif";
+			     document.getElementById("showhide"+msgnr).alt = "Hide";
+			     document.getElementById("ignprofile"+msgnr).style.display = "";
+			     }
+		}
+// ]]></script>
+
+	<script language="JavaScript" type="text/javascript"><!-- // --><![CDATA[
+		var current_header = false;
+
+		function shrinkHeader(mode)
+		{
+			document.cookie = "upshrink=" + (mode ? 1 : 0);
+			document.getElementById("upshrink").src = smf_images_url + (mode ? "/upshrink2.gif" : "/upshrink.gif");
+
+			document.getElementById("upshrinkHeader").style.display = mode ? "none" : "";
+			document.getElementById("upshrinkHeader2").style.display = mode ? "none" : "";
+
+			current_header = mode;
+		}
+	// ]]></script>
+		<script language="JavaScript" type="text/javascript"><!-- // --><![CDATA[
+			var current_header_ic = false;
+
+			function shrinkHeaderIC(mode)
+			{
+				document.cookie = "upshrinkIC=" + (mode ? 1 : 0);
+				document.getElementById("upshrink_ic").src = smf_images_url + (mode ? "/expand.gif" : "/collapse.gif");
+
+				document.getElementById("upshrinkHeaderIC").style.display = mode ? "none" : "";
+
+				current_header_ic = mode;
+			}
+		// ]]></script>
+</head>
+<body>
+	<div class="tborder">
+		<table id="smfheader" border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tbody><tr>
+				<td class="catbg" height="32">
+					<span style="font-family: Verdana, sans-serif; font-size: 140%; ">Bitcoin Forum</span>
+				</td>
+				<td class="catbg" align="right">
+					<img src="_post-Dateien/smflogo.gif" style="margin: 2px;" alt="">
+				</td>
+			</tr>
+		</tbody></table>
+		<table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tbody><tr>
+				<td class="titlebg2" align="right" height="32">
+					<span class="smalltext">April 14, 2013, 01:01:03 AM</span>
+					<a href="#" onclick="shrinkHeader(!current_header); return false;"><img id="upshrink" src="_post-Dateien/upshrink.gif" alt="*" title="Shrink or expand the header." style="margin: 0 1ex;" align="bottom"></a>
+				</td>
+			</tr>
+			<tr id="upshrinkHeader">
+				<td colspan="2" valign="top">
+					<table class="bordercolor" style="margin-top: 1px;" border="0" cellpadding="8" cellspacing="1" width="100%">
+						<tbody><tr>
+							<td colspan="2" class="windowbg2" id="variousheadlinks" valign="top" width="100%"><span class="middletext">Welcome, <b>Guest</b>. Please <a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;action=login">login</a> or <a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;action=register">register</a>.				</span>
+								<script language="JavaScript" type="text/javascript" src="_post-Dateien/sha1.js"></script>
+
+								<form action="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;action=login2" method="post" accept-charset="ISO-8859-1" class="middletext" style="margin: 3px 1ex 1px 0;">
+									<input name="user" size="10" type="text"> <input name="passwrd" size="10" type="password">
+									<select name="cookielength">
+										<option value="60">1 Hour</option>
+										<option value="1440">1 Day</option>
+										<option value="10080">1 Week</option>
+										<option value="43200">1 Month</option>
+										<option value="-1" selected="selected">Forever</option>
+									</select>
+									<input value="Login" type="submit"><br>
+									<span class="middletext">Login with username, password and session length</span>
+									<input name="hash_passwrd" value="" type="hidden">
+								</form>
+							</td>
+						</tr>
+					</tbody></table>
+				</td>
+			</tr>
+		</tbody></table>
+		<table id="upshrinkHeader2" border="0" cellpadding="4" cellspacing="0" width="100%">
+			<tbody><tr>
+				<td class="titlebg2" width="90%">
+					<span class="smalltext"><b>News</b>: <span style="color: blueviolet;">All
+ users of Bitcoin-Qt/bitcoind versions 0.7.2 and earlier are required to
+ upgrade to 0.8.1 or apply a manual workaround by May 15.</span> <a href="http://bitcoin.org/may15.html" target="_blank">More info.</a></span>
+				</td>
+				<td class="titlebg2" align="right" nowrap="nowrap" valign="top">
+					<form action="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;action=search2" method="post" accept-charset="ISO-8859-1" style="margin: 0;">
+						<a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;action=search;advanced"><img src="_post-Dateien/filter.gif" style="margin: 0 1ex;" alt="" align="middle"></a>
+						<input name="search" style="width: 190px;" type="text">&nbsp;
+						<input name="submit" value="Search" style="width: 11ex;" type="submit">
+						<input name="advanced" value="0" type="hidden">
+						<input name="topic" value="14818" type="hidden">
+					</form>
+				</td>
+			</tr>
+		</tbody></table>
+	</div>
+			<table style="margin-left: 10px;" border="0" cellpadding="0" cellspacing="0">
+				<tbody><tr>
+					<td class="maintab_first">&nbsp;</td><td class="maintab_active_first">&nbsp;</td>
+				<td class="maintab_active_back" valign="top">
+					<a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;">Home</a>
+				</td><td class="maintab_active_last">&nbsp;</td>
+				<td class="maintab_back" valign="top">
+					<a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;action=help">Help</a>
+				</td>
+				<td class="maintab_back" valign="top">
+					<a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;action=search">Search</a>
+				</td>
+				<td class="maintab_back" valign="top">
+					<a href="https://bitcointalk.org/donate.html">Donate</a>
+				</td>
+				<td class="maintab_back" valign="top">
+					<a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;action=login">Login</a>
+				</td>
+				<td class="maintab_back" valign="top">
+					<a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;action=register">Register</a>
+				</td>
+				<td class="maintab_last">&nbsp;</td>
+			</tr>
+		</tbody></table>
+	<div id="bodyarea" style="padding: 1ex 0px 2ex 0px;">
+<a name="top"></a>
+<a name="msg199226"></a>
+<div><div class="nav" style="font-size: smaller; margin-bottom: 2ex; margin-top: 2ex;"><b><a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;" class="nav">Bitcoin Forum</a></b>&nbsp;&gt;&nbsp;<b><a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;#1" class="nav">Bitcoin</a></b>&nbsp;&gt;&nbsp;<b><a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;board=1.0" class="nav">Bitcoin Discussion</a></b> (Moderators: <a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;action=profile;u=5266" title="Board Moderator">hazek</a>, <a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;action=profile;u=17261" title="Board Moderator">tysat</a>)&nbsp;&gt;&nbsp;<b><a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;topic=14818.0" class="nav">Bitcoin Exchange Watcher program V 1.5.2 [Open source]</a></b></div></div>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+	<tbody><tr>
+		  <td class="middletext" style="padding-bottom: 4px;" valign="bottom">Pages:  <b>1</b> <a class="navPages" href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;topic=14818.20">2</a> <a class="navPages" href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;topic=14818.40">3</a> <a class="navPages" href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;topic=14818.20">»</a> &nbsp;<a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;topic=14818.0;all">All</a> </td>
+		<td style="padding-right: 1ex;" align="right">
+			<div class="nav" style="margin-bottom: 2px;"> <a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;topic=14818.0;prev_next=prev#new">« previous topic</a> <a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;topic=14818.0;prev_next=next#new">next topic »</a></div>
+			<table cellpadding="0" cellspacing="0">
+				<tbody><tr>
+					
+		<td class="mirrortab_first">&nbsp;</td>
+		<td class="mirrortab_back"><a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;action=printpage;topic=14818.0" target="_blank">Print</a></td>
+		<td class="mirrortab_last">&nbsp;</td>
+				</tr>
+			</tbody></table>
+		</td>
+	</tr>
+</tbody></table>
+<table class="tborder" style="border-bottom: 0;" border="0" cellpadding="3" cellspacing="0" width="100%">
+		<tbody><tr class="catbg3">
+				<td style="padding-left: 6px;" valign="middle" width="2%">
+						<img src="_post-Dateien/hot_post.gif" alt="" align="bottom">
+				</td>
+				<td width="13%"> Author</td>
+				<td style="padding-left: 6px;" id="top_subject" valign="middle" width="85%">
+						Topic: Bitcoin Exchange Watcher program V 1.5.2 [Open source] &nbsp;(Read 6196 times)
+				</td>
+		</tr>
+</tbody></table>
+<form action="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;action=quickmod2;topic=14818.0" method="post" accept-charset="ISO-8859-1" name="quickModForm" id="quickModForm" style="margin: 0;" onsubmit="return in_edit_mode == 1 ? modify_save('88abddaf6361c7d41c31fa6afef68689') : confirm('Are you sure you want to do this?');">
+<table class="bordercolor" border="0" cellpadding="0" cellspacing="0" width="100%">
+	<tbody><tr><td style="padding: 1px 1px 0 1px;">
+		<table border="0" cellpadding="3" cellspacing="0" width="100%">
+			<tbody><tr><td class="windowbg">
+				<table style="table-layout: fixed;" cellpadding="5" cellspacing="0" width="100%">
+					<tbody><tr>
+								<td rowspan="2" style="overflow: hidden;" class="poster_info" valign="top" width="16%">
+							<b><a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;action=profile;u=21472" title="View the profile of Morthawt">Morthawt</a></b>
+							<div class="smalltext">
+								Jr. Member<br>
+								<img src="_post-Dateien/star.gif" alt="*" border="0"><img src="_post-Dateien/star.gif" alt="*" border="0"><br>
+								<img src="_post-Dateien/useroff.gif" alt="Offline" style="margin-top: 2px;" border="0"><span class="smalltext"> Offline</span><br><br>
+								Posts: 31<br>
+								<br>
+								<div style="overflow: auto; width: 100%;"><img src="_post-Dateien/avatar_21472.png" alt="" class="avatar" border="0"></div><br>
+								Hey there! I am Wesley G aka Morthawt<br>
+								<br>
+								
+								
+								
+								<br>
+								<a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;action=profile;u=21472"><img src="_post-Dateien/profile_sm.gif" alt="View Profile" title="View Profile" border="0"></a>
+								<a href="http://www.morthawt.com/" title="Morthawt.com" target="_blank"><img src="_post-Dateien/www_sm.gif" alt="WWW" border="0"></a><br>
+						  <br><a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;action=ignore;u=21472;topic=14818;msg=199226">Ignore</a>
+							</div>
+						</td>
+								<td style="padding: 2px;" class="td_headerandpost" height="100%" valign="top" width="85%">
+							<table border="0" width="100%"><tbody><tr>
+								<td valign="middle"><a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;topic=14818.msg199226#msg199226"><img src="_post-Dateien/xx.gif" alt="" border="0"></a></td>
+								<td valign="middle">
+												<div style="font-weight: bold;" class="subject" id="subject_199226">
+										<a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;topic=14818.msg199226#msg199226">Bitcoin Exchange Watcher program V 1.5.2 [Open source]</a>
+									</div>
+												<div class="smalltext"><span title="Last edit: June 27, 2011, 08:52:26 PM by Morthawt" class="edited">June 11, 2011, 12:59:28 AM</span></div></td>
+										  <td style="font-size: smaller; padding-top: 4px;" class="td_buttons" align="right" height="20" valign="middle"><div id="ignmsgbttns1" style="visibility: visible;"> &nbsp;<a class="message_number" style="vertical-align: middle;" href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;topic=14818.msg199226#msg199226">#1</a>
+		 </div>
+								</td>
+							</tr></tbody></table>
+									 <hr class="hrcolor" style="margin-top: 4px;" size="1" width="100%">
+							<div class="post">I made a little program so I can keep an eye 
+out on what exactly the prices are for bitcoins. This program, I wrote 
+with AutoIt3. While autoit is not the best thing in the world and has 
+its limitations it works and is very functional and pretty fast.<br><br>I
+ did not like the idea of having to keep the web page open and keep 
+refreshing the page, which is why I created this to automatically 
+refresh the information from the API so that I can clearly see both 
+values.<br><br><b>Features:</b><br><br><ul style="margin-top: 0; margin-bottom: 0;"><li>Monitor both buying and selling exchange rates via mtgox API</li><li>Refresh rate of the exchange rate checking can be customized</li><li>Audio alert when buy/sell rates hit within your desired targets</li><li>Ability to save your settings so each time you load the program it has your settings</li><li>Ability to reload settings from your saved ones and also wipe out your saved settings to default</li><li>Currency converter with up to date currency data ([BTC - any currency] [Any currency - BTC] via Google API</li><li>Always on top feature</li><li>Mini "on top" window to keep an eye on rates and save screen space</li><li>Donate menu which will copy my donations bitcoin address to your clipboard so you can donate to me</li></ul><br><span style="font-size: 12pt !important; line-height: 1.3em;"><b>Download link:</b></span> <a href="http://www.wuala.com/morthawt/btc.exchange.watcher/" target="_blank">http://www.wuala.com/morthawt/btc.exchange.watcher/</a><br><br>If
+ you like the idea of having a little program you can keep open to check
+ the current rates, feel free to donate something to me at the following
+ bitcoin address: 1MTkF9ZTcXtgvQX245TwTL2Ko3NMvJHz6P<br><br>There is also a donate menu which will copy the bitcoin address to clipboard.<br><br>I hope you like this as much as I do.<br><br>I will update it if anything changes with the API or if bugs are found I will do my best to correct them as soon as possible.<br><br>Here are some little pictures of it:<br><br><img class="userimg" src="_post-Dateien/btcwatcher.png" alt="" border="0"> <img class="userimg" src="_post-Dateien/btcdelay.png" alt="" border="0"><br><br><img class="userimg" src="_post-Dateien/btcconvert.png" alt="" border="0"> <img class="userimg" src="_post-Dateien/btcmini.png" alt="" border="0"><br><br><br>Thanks guys.<br><br>Change Log:<br><br><b>V 1.5.2</b><br><ul style="margin-top: 0; margin-bottom: 0;"><li> Updated the handeling of the Mt.Gox API</li></ul><br><b>V 1.5</b><br><ul style="margin-top: 0; margin-bottom: 0;"><li> Changed the terminology on the alerting section, because I had overlooked those labels.</li></ul><br><b>V 1.4.9</b><br><ul style="margin-top: 0; margin-bottom: 0;"><li> Changed terminology to bid and ask rather than buy and sell.</li></ul><br><b>V 1.4.8</b><br><ul style="margin-top: 0; margin-bottom: 0;"><li> Changed menu text "Conversions" to "Tools" to accomodate new additional features.</li><li> Added a mini "always on top" currency watcher "MinX" for when you want to save screen space!</li></ul><br><b>V 1.4.7</b><br><ul style="margin-top: 0; margin-bottom: 0;"><li> Added the ability to choose to have the program always on top.</li></ul><br><b>V 1.4.6</b><br><ul style="margin-top: 0; margin-bottom: 0;"><li> Added extra menu's</li><li>
+ Added a conversion feature to allow you to do calculations based on up 
+to date currency conversion data (courtesy of google api).</li><li> Fixed the code so the main window cannot be used while other child windows are opened (close them to access the main window).</li></ul><br><b>V 1.4.4</b><br><ul style="margin-top: 0; margin-bottom: 0;"><li> Added extra menu's</li><li> Added ability to save/load/clear your settings.</li><li> Added the ability to choose your own refresh delay for retrieving new exchange rate information.</li></ul><br><b>V 1.4.2</b><br><ul style="margin-top: 0; margin-bottom: 0;"><li> Fixed some code to prevent further bugs of the previous kind (hopefully)</li><li> Altered the sizing of the window and its contents to "help" readability on systems with customized jumbo sized font sizes.</li><li> Altered the code to hopefully prevent audio warnings when the API goes down due to too many connections.</li><li>
+ Recoded to check the API every 10 seconds for updated information to 
+reduce number of connections and improve responsiveness of the 
+interface.</li></ul><br><b>V 1.4.1.2</b><br><br><ul style="margin-top: 0; margin-bottom: 0;"><li> Presumably I have now solved the bug that caused the program to intermittently crash.</li></ul><br><b>V 1.4.1.1</b><br><br><ul style="margin-top: 0; margin-bottom: 0;"><li> Flipped the buy/sell areas over to be more logical</li><li>
+ Added two different sounds depending on if its buying price or selling 
+price (high-low frequency = &nbsp;sell price / low-high frequency = buy 
+price)</li><li> Altered the interface to make it smaller. It was 
+originally larger due to tests I had done with the interface prior to 
+first release.</li></ul><br><b>V 1.4 released</b><br>&nbsp;<ul style="margin-top: 0; margin-bottom: 0;"><li>Added ability to set an audio alarm to alert you to a desired current buying or selling price of bitcoins.</li></ul><br><b>V 1.3 Public release</b><br><br><br>Feel free to report any bugs here on the forum thread.<br><br><br><b>Edit:</b><br>Included source code in the same directory on the download link if you want to check that out for any reason.</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="smalltext" valign="bottom" width="85%">
+							<table style="table-layout: fixed;" border="0" width="100%"><tbody><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td class="smalltext" id="modified_199226" valign="bottom">
+								</td>
+								<td class="smalltext" align="right" valign="bottom">
+									<img src="_post-Dateien/ip.gif" alt="" border="0">
+								</td>
+							</tr></tbody></table>
+							<hr class="hrcolor" size="1" width="100%">
+							<div class="signature">Free and open source Bitcoin exchange rate monitor and alerting program: <a href="http://forum.bitcoin.org/index.php?topic=14818.0" target="_blank">http://forum.bitcoin.org/index.php?topic=14818.0</a><br>To
+ show your support and appreciation for my bitcoin exchange rate watcher
+ send me a donation: 1MTkF9ZTcXtgvQX245TwTL2Ko3NMvJHz6P</div>
+						</td>
+					</tr>
+				</tbody></table>
+			</td></tr>
+		</tbody></table>
+	</td></tr><tr><td style="padding: 0 0 1px 0;"></td></tr><tr><td class="middletext" style="border:inherit;background-color: #E5E5E8; padding:1.5pt 5pt; text-align:center"><b>Advertisement: </b>Remember that Bitcoin is still beta software. Don't put all of your money into BTC!</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg199251"></a>
+		<table border="0" cellpadding="3" cellspacing="0" width="100%">
+			<tbody><tr><td class="windowbg2">
+				<table style="table-layout: fixed;" cellpadding="5" cellspacing="0" width="100%">
+					<tbody><tr>
+								<td rowspan="2" style="overflow: hidden;" class="poster_info" valign="top" width="16%">
+							<b><a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;action=profile;u=21472" title="View the profile of Morthawt">Morthawt</a></b>
+							<div class="smalltext">
+								Jr. Member<br>
+								<img src="_post-Dateien/star.gif" alt="*" border="0"><img src="_post-Dateien/star.gif" alt="*" border="0"><br>
+								<img src="_post-Dateien/useroff.gif" alt="Offline" style="margin-top: 2px;" border="0"><span class="smalltext"> Offline</span><br><br>
+								Posts: 31<br>
+								<br>
+								<div style="overflow: auto; width: 100%;"><img src="_post-Dateien/avatar_21472.png" alt="" class="avatar" border="0"></div><br>
+								Hey there! I am Wesley G aka Morthawt<br>
+								<br>
+								
+								
+								
+								<br>
+								<a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;action=profile;u=21472"><img src="_post-Dateien/profile_sm.gif" alt="View Profile" title="View Profile" border="0"></a>
+								<a href="http://www.morthawt.com/" title="Morthawt.com" target="_blank"><img src="_post-Dateien/www_sm.gif" alt="WWW" border="0"></a><br>
+						  <br><a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;action=ignore;u=21472;topic=14818;msg=199251">Ignore</a>
+							</div>
+						</td>
+								<td style="padding: 2px;" class="td_headerandpost" height="100%" valign="top" width="85%">
+							<table border="0" width="100%"><tbody><tr>
+								<td valign="middle"><a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;topic=14818.msg199251#msg199251"><img src="_post-Dateien/xx.gif" alt="" border="0"></a></td>
+								<td valign="middle">
+												<div style="font-weight: bold;" class="subject" id="subject_199251">
+										<a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;topic=14818.msg199251#msg199251">Re: Bitcoin Exchange Watcher program (autoit)</a>
+									</div>
+												<div class="smalltext">June 11, 2011, 01:06:32 AM</div></td>
+										  <td style="font-size: smaller; padding-top: 4px;" class="td_buttons" align="right" height="20" valign="middle"><div id="ignmsgbttns2" style="visibility: visible;"> &nbsp;<a class="message_number" style="vertical-align: middle;" href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;topic=14818.msg199251#msg199251">#2</a>
+		 </div>
+								</td>
+							</tr></tbody></table>
+									 <hr class="hrcolor" style="margin-top: 4px;" size="1" width="100%">
+							<div class="post">I am toying with the idea of maybe adding a 
+feature to warn you when a rate hits around a level the user puts in. I 
+MAY include this feature if I can pull it off. Autoit is kind of 
+limiting in the sense that it works only in serial and not parallel, 
+that means it can only do 1 task at a time which is where the couple 
+seconds lag may be between closing the program or bringing up a menu 
+option when you click it because the program is still doing its job 
+online with receiving the data and updating the on screen display.<br><br>I
+ would love to pull it off though, so that you can type in a figure and 
+if it hits (depending wether its selling or buying rate) on or above / 
+on or below a certain figure to play an audio message. If I see people 
+are liking it I will probably do my best to add that feature to it. 
+Donations are always welcome motivation also <img src="_post-Dateien/smiley.gif" alt="Smiley" border="0"><br><br>Enjoy.</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="smalltext" valign="bottom" width="85%">
+							<table style="table-layout: fixed;" border="0" width="100%"><tbody><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td class="smalltext" id="modified_199251" valign="bottom">
+								</td>
+								<td class="smalltext" align="right" valign="bottom">
+									<img src="_post-Dateien/ip.gif" alt="" border="0">
+								</td>
+							</tr></tbody></table>
+							<hr class="hrcolor" size="1" width="100%">
+							<div class="signature">Free and open source Bitcoin exchange rate monitor and alerting program: <a href="http://forum.bitcoin.org/index.php?topic=14818.0" target="_blank">http://forum.bitcoin.org/index.php?topic=14818.0</a><br>To
+ show your support and appreciation for my bitcoin exchange rate watcher
+ send me a donation: 1MTkF9ZTcXtgvQX245TwTL2Ko3NMvJHz6P</div>
+						</td>
+					</tr>
+				</tbody></table>
+			</td></tr>
+		</tbody></table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg199392"></a>
+		<table border="0" cellpadding="3" cellspacing="0" width="100%">
+			<tbody><tr><td class="windowbg">
+				<table style="table-layout: fixed;" cellpadding="5" cellspacing="0" width="100%">
+					<tbody><tr>
+								<td rowspan="2" style="overflow: hidden;" class="poster_info" valign="top" width="16%">
+							<b><a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;action=profile;u=20904" title="View the profile of Olomana">Olomana</a></b>
+							<div class="smalltext">
+								Jr. Member<br>
+								<img src="_post-Dateien/star.gif" alt="*" border="0"><img src="_post-Dateien/star.gif" alt="*" border="0"><br>
+								<img src="_post-Dateien/useroff.gif" alt="Offline" style="margin-top: 2px;" border="0"><span class="smalltext"> Offline</span><br><br>
+								Posts: 18<br>
+								<br>
+								
+								
+								
+								<br>
+								<a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;action=profile;u=20904"><img src="_post-Dateien/profile_sm.gif" alt="View Profile" title="View Profile" border="0"></a><br>
+						  <br><a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;action=ignore;u=20904;topic=14818;msg=199392">Ignore</a>
+							</div>
+						</td>
+								<td style="padding: 2px;" class="td_headerandpost" height="100%" valign="top" width="85%">
+							<table border="0" width="100%"><tbody><tr>
+								<td valign="middle"><a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;topic=14818.msg199392#msg199392"><img src="_post-Dateien/xx.gif" alt="" border="0"></a></td>
+								<td valign="middle">
+												<div style="font-weight: bold;" class="subject" id="subject_199392">
+										<a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;topic=14818.msg199392#msg199392">Re: Bitcoin Exchange Watcher program [Open source] (autoit)</a>
+									</div>
+												<div class="smalltext">June 11, 2011, 01:48:17 AM</div></td>
+										  <td style="font-size: smaller; padding-top: 4px;" class="td_buttons" align="right" height="20" valign="middle"><div id="ignmsgbttns3" style="visibility: visible;"> &nbsp;<a class="message_number" style="vertical-align: middle;" href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;topic=14818.msg199392#msg199392">#3</a>
+		 </div>
+								</td>
+							</tr></tbody></table>
+									 <hr class="hrcolor" style="margin-top: 4px;" size="1" width="100%">
+							<div class="post">Thanks for this.&nbsp; Suggestion: put the bid on the left, ask on the right.<br><br>Also,
+ it is quite feasible to have AutoIt run tasks in parallel, or rather to
+ simulate running them in parallel.&nbsp; You put each task in its own 
+subroutine.&nbsp; Then you call all the tasks from a master dispatcher 
+loop.&nbsp; Each task checks its own timer and executes if it's time to 
+execute, and otherwise just returns.&nbsp; This is a "round-robin 
+non-pre-emptive task scheduler".&nbsp; (My experience writing bots to 
+play Evony finally pays off!)<br></div>
+						</td>
+					</tr>
+					<tr>
+						<td class="smalltext" valign="bottom" width="85%">
+							<table style="table-layout: fixed;" border="0" width="100%"><tbody><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td class="smalltext" id="modified_199392" valign="bottom">
+								</td>
+								<td class="smalltext" align="right" valign="bottom">
+									<img src="_post-Dateien/ip.gif" alt="" border="0">
+								</td>
+							</tr></tbody></table>
+						</td>
+					</tr>
+				</tbody></table>
+			</td></tr>
+		</tbody></table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg199455"></a>
+		<table border="0" cellpadding="3" cellspacing="0" width="100%">
+			<tbody><tr><td class="windowbg2">
+				<table style="table-layout: fixed;" cellpadding="5" cellspacing="0" width="100%">
+					<tbody><tr>
+								<td rowspan="2" style="overflow: hidden;" class="poster_info" valign="top" width="16%">
+							<b><a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;action=profile;u=21472" title="View the profile of Morthawt">Morthawt</a></b>
+							<div class="smalltext">
+								Jr. Member<br>
+								<img src="_post-Dateien/star.gif" alt="*" border="0"><img src="_post-Dateien/star.gif" alt="*" border="0"><br>
+								<img src="_post-Dateien/useroff.gif" alt="Offline" style="margin-top: 2px;" border="0"><span class="smalltext"> Offline</span><br><br>
+								Posts: 31<br>
+								<br>
+								<div style="overflow: auto; width: 100%;"><img src="_post-Dateien/avatar_21472.png" alt="" class="avatar" border="0"></div><br>
+								Hey there! I am Wesley G aka Morthawt<br>
+								<br>
+								
+								
+								
+								<br>
+								<a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;action=profile;u=21472"><img src="_post-Dateien/profile_sm.gif" alt="View Profile" title="View Profile" border="0"></a>
+								<a href="http://www.morthawt.com/" title="Morthawt.com" target="_blank"><img src="_post-Dateien/www_sm.gif" alt="WWW" border="0"></a><br>
+						  <br><a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;action=ignore;u=21472;topic=14818;msg=199455">Ignore</a>
+							</div>
+						</td>
+								<td style="padding: 2px;" class="td_headerandpost" height="100%" valign="top" width="85%">
+							<table border="0" width="100%"><tbody><tr>
+								<td valign="middle"><a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;topic=14818.msg199455#msg199455"><img src="_post-Dateien/xx.gif" alt="" border="0"></a></td>
+								<td valign="middle">
+												<div style="font-weight: bold;" class="subject" id="subject_199455">
+										<a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;topic=14818.msg199455#msg199455">Re: Bitcoin Exchange Watcher program [Open source] (autoit)</a>
+									</div>
+												<div class="smalltext">June 11, 2011, 02:06:42 AM</div></td>
+										  <td style="font-size: smaller; padding-top: 4px;" class="td_buttons" align="right" height="20" valign="middle"><div id="ignmsgbttns4" style="visibility: visible;"> &nbsp;<a class="message_number" style="vertical-align: middle;" href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;topic=14818.msg199455#msg199455">#4</a>
+		 </div>
+								</td>
+							</tr></tbody></table>
+									 <hr class="hrcolor" style="margin-top: 4px;" size="1" width="100%">
+							<div class="post">bid and ask? Im lost. This is the current 
+buying rate and the current selling rate that you see when you go to 
+mtgox to do some trading. As for parallel I could have multiple scripts 
+separately being run, communicating through ini files but I figured I 
+don't need to. I always can if I need to though.</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="smalltext" valign="bottom" width="85%">
+							<table style="table-layout: fixed;" border="0" width="100%"><tbody><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td class="smalltext" id="modified_199455" valign="bottom">
+								</td>
+								<td class="smalltext" align="right" valign="bottom">
+									<img src="_post-Dateien/ip.gif" alt="" border="0">
+								</td>
+							</tr></tbody></table>
+							<hr class="hrcolor" size="1" width="100%">
+							<div class="signature">Free and open source Bitcoin exchange rate monitor and alerting program: <a href="http://forum.bitcoin.org/index.php?topic=14818.0" target="_blank">http://forum.bitcoin.org/index.php?topic=14818.0</a><br>To
+ show your support and appreciation for my bitcoin exchange rate watcher
+ send me a donation: 1MTkF9ZTcXtgvQX245TwTL2Ko3NMvJHz6P</div>
+						</td>
+					</tr>
+				</tbody></table>
+			</td></tr>
+		</tbody></table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg200007"></a>
+		<table border="0" cellpadding="3" cellspacing="0" width="100%">
+			<tbody><tr><td class="windowbg">
+				<table style="table-layout: fixed;" cellpadding="5" cellspacing="0" width="100%">
+					<tbody><tr>
+								<td rowspan="2" style="overflow: hidden;" class="poster_info" valign="top" width="16%">
+							<b><a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;action=profile;u=21472" title="View the profile of Morthawt">Morthawt</a></b>
+							<div class="smalltext">
+								Jr. Member<br>
+								<img src="_post-Dateien/star.gif" alt="*" border="0"><img src="_post-Dateien/star.gif" alt="*" border="0"><br>
+								<img src="_post-Dateien/useroff.gif" alt="Offline" style="margin-top: 2px;" border="0"><span class="smalltext"> Offline</span><br><br>
+								Posts: 31<br>
+								<br>
+								<div style="overflow: auto; width: 100%;"><img src="_post-Dateien/avatar_21472.png" alt="" class="avatar" border="0"></div><br>
+								Hey there! I am Wesley G aka Morthawt<br>
+								<br>
+								
+								
+								
+								<br>
+								<a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;action=profile;u=21472"><img src="_post-Dateien/profile_sm.gif" alt="View Profile" title="View Profile" border="0"></a>
+								<a href="http://www.morthawt.com/" title="Morthawt.com" target="_blank"><img src="_post-Dateien/www_sm.gif" alt="WWW" border="0"></a><br>
+						  <br><a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;action=ignore;u=21472;topic=14818;msg=200007">Ignore</a>
+							</div>
+						</td>
+								<td style="padding: 2px;" class="td_headerandpost" height="100%" valign="top" width="85%">
+							<table border="0" width="100%"><tbody><tr>
+								<td valign="middle"><a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;topic=14818.msg200007#msg200007"><img src="_post-Dateien/xx.gif" alt="" border="0"></a></td>
+								<td valign="middle">
+												<div style="font-weight: bold;" class="subject" id="subject_200007">
+										<a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;topic=14818.msg200007#msg200007">Re: Bitcoin Exchange Watcher program [Open source] (autoit)</a>
+									</div>
+												<div class="smalltext">June 11, 2011, 05:26:15 AM</div></td>
+										  <td style="font-size: smaller; padding-top: 4px;" class="td_buttons" align="right" height="20" valign="middle"><div id="ignmsgbttns5" style="visibility: visible;"> &nbsp;<a class="message_number" style="vertical-align: middle;" href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;topic=14818.msg200007#msg200007">#5</a>
+		 </div>
+								</td>
+							</tr></tbody></table>
+									 <hr class="hrcolor" style="margin-top: 4px;" size="1" width="100%">
+							<div class="post">Updated to version 1.4<br><br>I have added a 
+feature to be able to have an audio beep when a particular exchange 
+figure (either buying or selling rates) hit the area you are looking 
+for. For example if you generated a bitcoin and are waiting until it is 
+the most expensive, you may want to put a selling alert in for perhaps 
+30. Once the selling price hits 30 or more it will continually beep. 
+Same with buy price, if you want to buy coins at the lowest price, lets 
+say under $20... You could put 20 into the buy price alert and when the 
+actual price drops to 20 or below, it will warn you just the same.<br><br>You
+ can disable the sound alerting by unchecking the box, or setting both 
+alert boxes back to 0 so this gives you the choice of leaving your 
+figures there and just temp disabling the sound, or just zeroing the 
+whole thing.<br><br>Enjoy and feel free to donate.<br><br>1MTkF9ZTcXtgvQX245TwTL2Ko3NMvJHz6P<br><br>Thank you</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="smalltext" valign="bottom" width="85%">
+							<table style="table-layout: fixed;" border="0" width="100%"><tbody><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td class="smalltext" id="modified_200007" valign="bottom">
+								</td>
+								<td class="smalltext" align="right" valign="bottom">
+									<img src="_post-Dateien/ip.gif" alt="" border="0">
+								</td>
+							</tr></tbody></table>
+							<hr class="hrcolor" size="1" width="100%">
+							<div class="signature">Free and open source Bitcoin exchange rate monitor and alerting program: <a href="http://forum.bitcoin.org/index.php?topic=14818.0" target="_blank">http://forum.bitcoin.org/index.php?topic=14818.0</a><br>To
+ show your support and appreciation for my bitcoin exchange rate watcher
+ send me a donation: 1MTkF9ZTcXtgvQX245TwTL2Ko3NMvJHz6P</div>
+						</td>
+					</tr>
+				</tbody></table>
+			</td></tr>
+		</tbody></table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg200067"></a>
+		<table border="0" cellpadding="3" cellspacing="0" width="100%">
+			<tbody><tr><td class="windowbg2">
+				<table style="table-layout: fixed;" cellpadding="5" cellspacing="0" width="100%">
+					<tbody><tr>
+								<td rowspan="2" style="overflow: hidden;" class="poster_info" valign="top" width="16%">
+							<b><a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;action=profile;u=18786" title="View the profile of Alex-Z">Alex-Z</a></b>
+							<div class="smalltext">
+								Jr. Member<br>
+								<img src="_post-Dateien/star.gif" alt="*" border="0"><img src="_post-Dateien/star.gif" alt="*" border="0"><br>
+								<img src="_post-Dateien/useroff.gif" alt="Offline" style="margin-top: 2px;" border="0"><span class="smalltext"> Offline</span><br><br>
+								Posts: 34<br>
+								<br>
+								
+								
+								
+								<br>
+								<a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;action=profile;u=18786"><img src="_post-Dateien/profile_sm.gif" alt="View Profile" title="View Profile" border="0"></a><br>
+						  <br><a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;action=ignore;u=18786;topic=14818;msg=200067">Ignore</a>
+							</div>
+						</td>
+								<td style="padding: 2px;" class="td_headerandpost" height="100%" valign="top" width="85%">
+							<table border="0" width="100%"><tbody><tr>
+								<td valign="middle"><a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;topic=14818.msg200067#msg200067"><img src="_post-Dateien/xx.gif" alt="" border="0"></a></td>
+								<td valign="middle">
+												<div style="font-weight: bold;" class="subject" id="subject_200067">
+										<a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;topic=14818.msg200067#msg200067">Re: Bitcoin Exchange Watcher program [Open source] (autoit)</a>
+									</div>
+												<div class="smalltext">June 11, 2011, 05:49:47 AM</div></td>
+										  <td style="font-size: smaller; padding-top: 4px;" class="td_buttons" align="right" height="20" valign="middle"><div id="ignmsgbttns6" style="visibility: visible;"> &nbsp;<a class="message_number" style="vertical-align: middle;" href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;topic=14818.msg200067#msg200067">#6</a>
+		 </div>
+								</td>
+							</tr></tbody></table>
+									 <hr class="hrcolor" style="margin-top: 4px;" size="1" width="100%">
+							<div class="post">Is mt gox cool with you making a request every couple seconds?</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="smalltext" valign="bottom" width="85%">
+							<table style="table-layout: fixed;" border="0" width="100%"><tbody><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td class="smalltext" id="modified_200067" valign="bottom">
+								</td>
+								<td class="smalltext" align="right" valign="bottom">
+									<img src="_post-Dateien/ip.gif" alt="" border="0">
+								</td>
+							</tr></tbody></table>
+						</td>
+					</tr>
+				</tbody></table>
+			</td></tr>
+		</tbody></table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg200094"></a>
+		<table border="0" cellpadding="3" cellspacing="0" width="100%">
+			<tbody><tr><td class="windowbg">
+				<table style="table-layout: fixed;" cellpadding="5" cellspacing="0" width="100%">
+					<tbody><tr>
+								<td rowspan="2" style="overflow: hidden;" class="poster_info" valign="top" width="16%">
+							<b><a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;action=profile;u=21472" title="View the profile of Morthawt">Morthawt</a></b>
+							<div class="smalltext">
+								Jr. Member<br>
+								<img src="_post-Dateien/star.gif" alt="*" border="0"><img src="_post-Dateien/star.gif" alt="*" border="0"><br>
+								<img src="_post-Dateien/useroff.gif" alt="Offline" style="margin-top: 2px;" border="0"><span class="smalltext"> Offline</span><br><br>
+								Posts: 31<br>
+								<br>
+								<div style="overflow: auto; width: 100%;"><img src="_post-Dateien/avatar_21472.png" alt="" class="avatar" border="0"></div><br>
+								Hey there! I am Wesley G aka Morthawt<br>
+								<br>
+								
+								
+								
+								<br>
+								<a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;action=profile;u=21472"><img src="_post-Dateien/profile_sm.gif" alt="View Profile" title="View Profile" border="0"></a>
+								<a href="http://www.morthawt.com/" title="Morthawt.com" target="_blank"><img src="_post-Dateien/www_sm.gif" alt="WWW" border="0"></a><br>
+						  <br><a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;action=ignore;u=21472;topic=14818;msg=200094">Ignore</a>
+							</div>
+						</td>
+								<td style="padding: 2px;" class="td_headerandpost" height="100%" valign="top" width="85%">
+							<table border="0" width="100%"><tbody><tr>
+								<td valign="middle"><a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;topic=14818.msg200094#msg200094"><img src="_post-Dateien/xx.gif" alt="" border="0"></a></td>
+								<td valign="middle">
+												<div style="font-weight: bold;" class="subject" id="subject_200094">
+										<a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;topic=14818.msg200094#msg200094">Re: Bitcoin Exchange Watcher program [Open source] (autoit)</a>
+									</div>
+												<div class="smalltext">June 11, 2011, 05:58:02 AM</div></td>
+										  <td style="font-size: smaller; padding-top: 4px;" class="td_buttons" align="right" height="20" valign="middle"><div id="ignmsgbttns7" style="visibility: visible;"> &nbsp;<a class="message_number" style="vertical-align: middle;" href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;topic=14818.msg200094#msg200094">#7</a>
+		 </div>
+								</td>
+							</tr></tbody></table>
+									 <hr class="hrcolor" style="margin-top: 4px;" size="1" width="100%">
+							<div class="post">Well considering on the site they say "That's 
+it. Now write a bot!" I would say yes. Nowhere on there does it mention 
+anything about limiting your accesses.</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="smalltext" valign="bottom" width="85%">
+							<table style="table-layout: fixed;" border="0" width="100%"><tbody><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td class="smalltext" id="modified_200094" valign="bottom">
+								</td>
+								<td class="smalltext" align="right" valign="bottom">
+									<img src="_post-Dateien/ip.gif" alt="" border="0">
+								</td>
+							</tr></tbody></table>
+							<hr class="hrcolor" size="1" width="100%">
+							<div class="signature">Free and open source Bitcoin exchange rate monitor and alerting program: <a href="http://forum.bitcoin.org/index.php?topic=14818.0" target="_blank">http://forum.bitcoin.org/index.php?topic=14818.0</a><br>To
+ show your support and appreciation for my bitcoin exchange rate watcher
+ send me a donation: 1MTkF9ZTcXtgvQX245TwTL2Ko3NMvJHz6P</div>
+						</td>
+					</tr>
+				</tbody></table>
+			</td></tr>
+		</tbody></table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg200214"></a>
+		<table border="0" cellpadding="3" cellspacing="0" width="100%">
+			<tbody><tr><td class="windowbg2">
+				<table style="table-layout: fixed;" cellpadding="5" cellspacing="0" width="100%">
+					<tbody><tr>
+								<td rowspan="2" style="overflow: hidden;" class="poster_info" valign="top" width="16%">
+							<b><a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;action=profile;u=18639" title="View the profile of Oldminer">Oldminer</a></b>
+							<div class="smalltext">
+								Hero Member<br>
+								<img src="_post-Dateien/star.gif" alt="*" border="0"><img src="_post-Dateien/star.gif" alt="*" border="0"><img src="_post-Dateien/star.gif" alt="*" border="0"><img src="_post-Dateien/star.gif" alt="*" border="0"><img src="_post-Dateien/star.gif" alt="*" border="0"><br>
+								<img src="_post-Dateien/useroff.gif" alt="Offline" style="margin-top: 2px;" border="0"><span class="smalltext"> Offline</span><br><br>
+								Posts: 1815<br>
+								<br>
+								<div style="overflow: auto; width: 100%;"><img src="_post-Dateien/avatar_18639.png" alt="" class="avatar" border="0"></div><br>
+								King Prawn<br>
+								<br>
+								
+								
+								
+								<br>
+								<a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;action=profile;u=18639"><img src="_post-Dateien/profile_sm.gif" alt="View Profile" title="View Profile" border="0"></a><br>
+						  <br><a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;action=ignore;u=18639;topic=14818;msg=200214">Ignore</a>
+							</div>
+						</td>
+								<td style="padding: 2px;" class="td_headerandpost" height="100%" valign="top" width="85%">
+							<table border="0" width="100%"><tbody><tr>
+								<td valign="middle"><a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;topic=14818.msg200214#msg200214"><img src="_post-Dateien/xx.gif" alt="" border="0"></a></td>
+								<td valign="middle">
+												<div style="font-weight: bold;" class="subject" id="subject_200214">
+										<a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;topic=14818.msg200214#msg200214">Re: Bitcoin Exchange Watcher program [Open source] (autoit)</a>
+									</div>
+												<div class="smalltext">June 11, 2011, 06:46:27 AM</div></td>
+										  <td style="font-size: smaller; padding-top: 4px;" class="td_buttons" align="right" height="20" valign="middle"><div id="ignmsgbttns8" style="visibility: visible;"> &nbsp;<a class="message_number" style="vertical-align: middle;" href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;topic=14818.msg200214#msg200214">#8</a>
+		 </div>
+								</td>
+							</tr></tbody></table>
+									 <hr class="hrcolor" style="margin-top: 4px;" size="1" width="100%">
+							<div class="post">Thanks for this - nice little gadget <img src="_post-Dateien/smiley.gif" alt="Smiley" border="0"></div>
+						</td>
+					</tr>
+					<tr>
+						<td class="smalltext" valign="bottom" width="85%">
+							<table style="table-layout: fixed;" border="0" width="100%"><tbody><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td class="smalltext" id="modified_200214" valign="bottom">
+								</td>
+								<td class="smalltext" align="right" valign="bottom">
+									<img src="_post-Dateien/ip.gif" alt="" border="0">
+								</td>
+							</tr></tbody></table>
+						</td>
+					</tr>
+				</tbody></table>
+			</td></tr>
+		</tbody></table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg200251"></a>
+		<table border="0" cellpadding="3" cellspacing="0" width="100%">
+			<tbody><tr><td class="windowbg">
+				<table style="table-layout: fixed;" cellpadding="5" cellspacing="0" width="100%">
+					<tbody><tr>
+								<td rowspan="2" style="overflow: hidden;" class="poster_info" valign="top" width="16%">
+							<b><a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;action=profile;u=20904" title="View the profile of Olomana">Olomana</a></b>
+							<div class="smalltext">
+								Jr. Member<br>
+								<img src="_post-Dateien/star.gif" alt="*" border="0"><img src="_post-Dateien/star.gif" alt="*" border="0"><br>
+								<img src="_post-Dateien/useroff.gif" alt="Offline" style="margin-top: 2px;" border="0"><span class="smalltext"> Offline</span><br><br>
+								Posts: 18<br>
+								<br>
+								
+								
+								
+								<br>
+								<a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;action=profile;u=20904"><img src="_post-Dateien/profile_sm.gif" alt="View Profile" title="View Profile" border="0"></a><br>
+						  <br><a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;action=ignore;u=20904;topic=14818;msg=200251">Ignore</a>
+							</div>
+						</td>
+								<td style="padding: 2px;" class="td_headerandpost" height="100%" valign="top" width="85%">
+							<table border="0" width="100%"><tbody><tr>
+								<td valign="middle"><a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;topic=14818.msg200251#msg200251"><img src="_post-Dateien/xx.gif" alt="" border="0"></a></td>
+								<td valign="middle">
+												<div style="font-weight: bold;" class="subject" id="subject_200251">
+										<a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;topic=14818.msg200251#msg200251">Re: Bitcoin Exchange Watcher program [Open source] (autoit)</a>
+									</div>
+												<div class="smalltext">June 11, 2011, 07:03:13 AM</div></td>
+										  <td style="font-size: smaller; padding-top: 4px;" class="td_buttons" align="right" height="20" valign="middle"><div id="ignmsgbttns9" style="visibility: visible;"> &nbsp;<a class="message_number" style="vertical-align: middle;" href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;topic=14818.msg200251#msg200251">#9</a>
+		 </div>
+								</td>
+							</tr></tbody></table>
+									 <hr class="hrcolor" style="margin-top: 4px;" size="1" width="100%">
+							<div class="post">Nice sound effects, but the two different alerts should give different sounds.&nbsp; Duhhh!<br><br>Bid
+ = buying at, Ask = selling at.&nbsp; The bid goes on the left.&nbsp; 
+People read left to right, and the smaller number goes on the 
+left.&nbsp; Might as well use the standard trading terminology and lay 
+out the screen in the way people expect.<br><br>The screen should be much smaller, so it doesn't waste screen real estate.<br><br>Sorry
+ to keep harping on user interface issues, but if you want people to use
+ the program, good UI is more important than good programming.&nbsp; If 
+you have good code and a bad UI, they'll use your code and write their 
+own UI.<br><br>I was looking at the API... looks like it would be easy 
+enough to add a settings screen for a user ID and password, and display 
+the user's current BTC and dollar balances.&nbsp; Then you could sound 
+an alert when the balance changes.&nbsp; That would tell the user when 
+one of his open orders executed.&nbsp; Heh, this is starting to look 
+like a framework for a trading bot.<br></div>
+						</td>
+					</tr>
+					<tr>
+						<td class="smalltext" valign="bottom" width="85%">
+							<table style="table-layout: fixed;" border="0" width="100%"><tbody><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td class="smalltext" id="modified_200251" valign="bottom">
+								</td>
+								<td class="smalltext" align="right" valign="bottom">
+									<img src="_post-Dateien/ip.gif" alt="" border="0">
+								</td>
+							</tr></tbody></table>
+						</td>
+					</tr>
+				</tbody></table>
+			</td></tr>
+		</tbody></table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg200271"></a>
+		<table border="0" cellpadding="3" cellspacing="0" width="100%">
+			<tbody><tr><td class="windowbg2">
+				<table style="table-layout: fixed;" cellpadding="5" cellspacing="0" width="100%">
+					<tbody><tr>
+								<td rowspan="2" style="overflow: hidden;" class="poster_info" valign="top" width="16%">
+							<b><a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;action=profile;u=20610" title="View the profile of tiptopgemdotcom">tiptopgemdotcom</a></b>
+							<div class="smalltext">
+								Hero Member<br>
+								<img src="_post-Dateien/star.gif" alt="*" border="0"><img src="_post-Dateien/star.gif" alt="*" border="0"><img src="_post-Dateien/star.gif" alt="*" border="0"><img src="_post-Dateien/star.gif" alt="*" border="0"><img src="_post-Dateien/star.gif" alt="*" border="0"><br>
+								<img src="_post-Dateien/useroff.gif" alt="Offline" style="margin-top: 2px;" border="0"><span class="smalltext"> Offline</span><br><br>
+								Posts: 1086<br>
+								<br>
+								<div style="overflow: auto; width: 100%;"><img src="_post-Dateien/avatar_20610.png" alt="" class="avatar" border="0"></div><br>
+								
+								
+								
+								<br>
+								<a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;action=profile;u=20610"><img src="_post-Dateien/profile_sm.gif" alt="View Profile" title="View Profile" border="0"></a>
+								<a href="http://tiptopgem.com/" title="The Gem Vault" target="_blank"><img src="_post-Dateien/www_sm.gif" alt="WWW" border="0"></a><br>
+						  <br><a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;action=ignore;u=20610;topic=14818;msg=200271">Ignore</a>
+							</div>
+						</td>
+								<td style="padding: 2px;" class="td_headerandpost" height="100%" valign="top" width="85%">
+							<table border="0" width="100%"><tbody><tr>
+								<td valign="middle"><a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;topic=14818.msg200271#msg200271"><img src="_post-Dateien/xx.gif" alt="" border="0"></a></td>
+								<td valign="middle">
+												<div style="font-weight: bold;" class="subject" id="subject_200271">
+										<a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;topic=14818.msg200271#msg200271">Re: Bitcoin Exchange Watcher program [Open source] (autoit)</a>
+									</div>
+												<div class="smalltext">June 11, 2011, 07:11:12 AM</div></td>
+										  <td style="font-size: smaller; padding-top: 4px;" class="td_buttons" align="right" height="20" valign="middle"><div id="ignmsgbttns10" style="visibility: visible;"> &nbsp;<a class="message_number" style="vertical-align: middle;" href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;topic=14818.msg200271#msg200271">#10</a>
+		 </div>
+								</td>
+							</tr></tbody></table>
+									 <hr class="hrcolor" style="margin-top: 4px;" size="1" width="100%">
+							<div class="post">This is a wonderful program.&nbsp; Thanks so much!&nbsp; <img src="_post-Dateien/smiley.gif" alt="Smiley" border="0"> <img src="_post-Dateien/smiley.gif" alt="Smiley" border="0"> <img src="_post-Dateien/smiley.gif" alt="Smiley" border="0"></div>
+						</td>
+					</tr>
+					<tr>
+						<td class="smalltext" valign="bottom" width="85%">
+							<table style="table-layout: fixed;" border="0" width="100%"><tbody><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td class="smalltext" id="modified_200271" valign="bottom">
+								</td>
+								<td class="smalltext" align="right" valign="bottom">
+									<img src="_post-Dateien/ip.gif" alt="" border="0">
+								</td>
+							</tr></tbody></table>
+							<hr class="hrcolor" size="1" width="100%">
+							<div class="signature"><div align="center"><font style="line-height: 1.3em;" size="3">Click here for my live auctions:</font><br><a href="http://bitmit.net/user/tiptopgemdotcom" target="_blank">Tip Top Gem on Bitmit</a></div></div>
+						</td>
+					</tr>
+				</tbody></table>
+			</td></tr>
+		</tbody></table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg201392"></a>
+		<table border="0" cellpadding="3" cellspacing="0" width="100%">
+			<tbody><tr><td class="windowbg">
+				<table style="table-layout: fixed;" cellpadding="5" cellspacing="0" width="100%">
+					<tbody><tr>
+								<td rowspan="2" style="overflow: hidden;" class="poster_info" valign="top" width="16%">
+							<b><a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;action=profile;u=21472" title="View the profile of Morthawt">Morthawt</a></b>
+							<div class="smalltext">
+								Jr. Member<br>
+								<img src="_post-Dateien/star.gif" alt="*" border="0"><img src="_post-Dateien/star.gif" alt="*" border="0"><br>
+								<img src="_post-Dateien/useroff.gif" alt="Offline" style="margin-top: 2px;" border="0"><span class="smalltext"> Offline</span><br><br>
+								Posts: 31<br>
+								<br>
+								<div style="overflow: auto; width: 100%;"><img src="_post-Dateien/avatar_21472.png" alt="" class="avatar" border="0"></div><br>
+								Hey there! I am Wesley G aka Morthawt<br>
+								<br>
+								
+								
+								
+								<br>
+								<a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;action=profile;u=21472"><img src="_post-Dateien/profile_sm.gif" alt="View Profile" title="View Profile" border="0"></a>
+								<a href="http://www.morthawt.com/" title="Morthawt.com" target="_blank"><img src="_post-Dateien/www_sm.gif" alt="WWW" border="0"></a><br>
+						  <br><a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;action=ignore;u=21472;topic=14818;msg=201392">Ignore</a>
+							</div>
+						</td>
+								<td style="padding: 2px;" class="td_headerandpost" height="100%" valign="top" width="85%">
+							<table border="0" width="100%"><tbody><tr>
+								<td valign="middle"><a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;topic=14818.msg201392#msg201392"><img src="_post-Dateien/xx.gif" alt="" border="0"></a></td>
+								<td valign="middle">
+												<div style="font-weight: bold;" class="subject" id="subject_201392">
+										<a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;topic=14818.msg201392#msg201392">Re: Bitcoin Exchange Watcher program [Open source] (autoit)</a>
+									</div>
+												<div class="smalltext">June 11, 2011, 03:43:19 PM</div></td>
+										  <td style="font-size: smaller; padding-top: 4px;" class="td_buttons" align="right" height="20" valign="middle"><div id="ignmsgbttns11" style="visibility: visible;"> &nbsp;<a class="message_number" style="vertical-align: middle;" href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;topic=14818.msg201392#msg201392">#11</a>
+		 </div>
+								</td>
+							</tr></tbody></table>
+									 <hr class="hrcolor" style="margin-top: 4px;" size="1" width="100%">
+							<div class="post">V 1.4.1.1 has been released. Check the first post for change details and a new screenshot.&nbsp; <img src="_post-Dateien/cool.gif" alt="Cool" border="0"><br><br>Regarding
+ adding balances though, at this time I am unaware of any way to "post" 
+information via AutoIt3. This would be required to make the API login to
+ receive information.</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="smalltext" valign="bottom" width="85%">
+							<table style="table-layout: fixed;" border="0" width="100%"><tbody><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td class="smalltext" id="modified_201392" valign="bottom">
+								</td>
+								<td class="smalltext" align="right" valign="bottom">
+									<img src="_post-Dateien/ip.gif" alt="" border="0">
+								</td>
+							</tr></tbody></table>
+							<hr class="hrcolor" size="1" width="100%">
+							<div class="signature">Free and open source Bitcoin exchange rate monitor and alerting program: <a href="http://forum.bitcoin.org/index.php?topic=14818.0" target="_blank">http://forum.bitcoin.org/index.php?topic=14818.0</a><br>To
+ show your support and appreciation for my bitcoin exchange rate watcher
+ send me a donation: 1MTkF9ZTcXtgvQX245TwTL2Ko3NMvJHz6P</div>
+						</td>
+					</tr>
+				</tbody></table>
+			</td></tr>
+		</tbody></table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg201591"></a>
+		<table border="0" cellpadding="3" cellspacing="0" width="100%">
+			<tbody><tr><td class="windowbg2">
+				<table style="table-layout: fixed;" cellpadding="5" cellspacing="0" width="100%">
+					<tbody><tr>
+								<td rowspan="2" style="overflow: hidden;" class="poster_info" valign="top" width="16%">
+							<b><a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;action=profile;u=21472" title="View the profile of Morthawt">Morthawt</a></b>
+							<div class="smalltext">
+								Jr. Member<br>
+								<img src="_post-Dateien/star.gif" alt="*" border="0"><img src="_post-Dateien/star.gif" alt="*" border="0"><br>
+								<img src="_post-Dateien/useroff.gif" alt="Offline" style="margin-top: 2px;" border="0"><span class="smalltext"> Offline</span><br><br>
+								Posts: 31<br>
+								<br>
+								<div style="overflow: auto; width: 100%;"><img src="_post-Dateien/avatar_21472.png" alt="" class="avatar" border="0"></div><br>
+								Hey there! I am Wesley G aka Morthawt<br>
+								<br>
+								
+								
+								
+								<br>
+								<a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;action=profile;u=21472"><img src="_post-Dateien/profile_sm.gif" alt="View Profile" title="View Profile" border="0"></a>
+								<a href="http://www.morthawt.com/" title="Morthawt.com" target="_blank"><img src="_post-Dateien/www_sm.gif" alt="WWW" border="0"></a><br>
+						  <br><a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;action=ignore;u=21472;topic=14818;msg=201591">Ignore</a>
+							</div>
+						</td>
+								<td style="padding: 2px;" class="td_headerandpost" height="100%" valign="top" width="85%">
+							<table border="0" width="100%"><tbody><tr>
+								<td valign="middle"><a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;topic=14818.msg201591#msg201591"><img src="_post-Dateien/xx.gif" alt="" border="0"></a></td>
+								<td valign="middle">
+												<div style="font-weight: bold;" class="subject" id="subject_201591">
+										<a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;topic=14818.msg201591#msg201591">Re: Bitcoin Exchange Watcher program [Open source] (autoit)</a>
+									</div>
+												<div class="smalltext">June 11, 2011, 04:16:19 PM</div></td>
+										  <td style="font-size: smaller; padding-top: 4px;" class="td_buttons" align="right" height="20" valign="middle"><div id="ignmsgbttns12" style="visibility: visible;"> &nbsp;<a class="message_number" style="vertical-align: middle;" href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;topic=14818.msg201591#msg201591">#12</a>
+		 </div>
+								</td>
+							</tr></tbody></table>
+									 <hr class="hrcolor" style="margin-top: 4px;" size="1" width="100%">
+							<div class="post">working on a bugfix for a recurring issue with 
+an array. I am not sure what the issue is, everything I try and fix it 
+with is not having a beneficial impact at all. I am continuing to work 
+on this.</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="smalltext" valign="bottom" width="85%">
+							<table style="table-layout: fixed;" border="0" width="100%"><tbody><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td class="smalltext" id="modified_201591" valign="bottom">
+								</td>
+								<td class="smalltext" align="right" valign="bottom">
+									<img src="_post-Dateien/ip.gif" alt="" border="0">
+								</td>
+							</tr></tbody></table>
+							<hr class="hrcolor" size="1" width="100%">
+							<div class="signature">Free and open source Bitcoin exchange rate monitor and alerting program: <a href="http://forum.bitcoin.org/index.php?topic=14818.0" target="_blank">http://forum.bitcoin.org/index.php?topic=14818.0</a><br>To
+ show your support and appreciation for my bitcoin exchange rate watcher
+ send me a donation: 1MTkF9ZTcXtgvQX245TwTL2Ko3NMvJHz6P</div>
+						</td>
+					</tr>
+				</tbody></table>
+			</td></tr>
+		</tbody></table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg201779"></a>
+		<table border="0" cellpadding="3" cellspacing="0" width="100%">
+			<tbody><tr><td class="windowbg">
+				<table style="table-layout: fixed;" cellpadding="5" cellspacing="0" width="100%">
+					<tbody><tr>
+								<td rowspan="2" style="overflow: hidden;" class="poster_info" valign="top" width="16%">
+							<b><a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;action=profile;u=21472" title="View the profile of Morthawt">Morthawt</a></b>
+							<div class="smalltext">
+								Jr. Member<br>
+								<img src="_post-Dateien/star.gif" alt="*" border="0"><img src="_post-Dateien/star.gif" alt="*" border="0"><br>
+								<img src="_post-Dateien/useroff.gif" alt="Offline" style="margin-top: 2px;" border="0"><span class="smalltext"> Offline</span><br><br>
+								Posts: 31<br>
+								<br>
+								<div style="overflow: auto; width: 100%;"><img src="_post-Dateien/avatar_21472.png" alt="" class="avatar" border="0"></div><br>
+								Hey there! I am Wesley G aka Morthawt<br>
+								<br>
+								
+								
+								
+								<br>
+								<a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;action=profile;u=21472"><img src="_post-Dateien/profile_sm.gif" alt="View Profile" title="View Profile" border="0"></a>
+								<a href="http://www.morthawt.com/" title="Morthawt.com" target="_blank"><img src="_post-Dateien/www_sm.gif" alt="WWW" border="0"></a><br>
+						  <br><a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;action=ignore;u=21472;topic=14818;msg=201779">Ignore</a>
+							</div>
+						</td>
+								<td style="padding: 2px;" class="td_headerandpost" height="100%" valign="top" width="85%">
+							<table border="0" width="100%"><tbody><tr>
+								<td valign="middle"><a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;topic=14818.msg201779#msg201779"><img src="_post-Dateien/xx.gif" alt="" border="0"></a></td>
+								<td valign="middle">
+												<div style="font-weight: bold;" class="subject" id="subject_201779">
+										<a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;topic=14818.msg201779#msg201779">Re: Bitcoin Exchange Watcher program [Open source] (autoit)</a>
+									</div>
+												<div class="smalltext">June 11, 2011, 04:47:56 PM</div></td>
+										  <td style="font-size: smaller; padding-top: 4px;" class="td_buttons" align="right" height="20" valign="middle"><div id="ignmsgbttns13" style="visibility: visible;"> &nbsp;<a class="message_number" style="vertical-align: middle;" href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;topic=14818.msg201779#msg201779">#13</a>
+		 </div>
+								</td>
+							</tr></tbody></table>
+									 <hr class="hrcolor" style="margin-top: 4px;" size="1" width="100%">
+							<div class="post">Bug has been fixed! (I hope...)&nbsp; <img src="_post-Dateien/rolleyes.gif" alt="Roll Eyes" border="0"></div>
+						</td>
+					</tr>
+					<tr>
+						<td class="smalltext" valign="bottom" width="85%">
+							<table style="table-layout: fixed;" border="0" width="100%"><tbody><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td class="smalltext" id="modified_201779" valign="bottom">
+								</td>
+								<td class="smalltext" align="right" valign="bottom">
+									<img src="_post-Dateien/ip.gif" alt="" border="0">
+								</td>
+							</tr></tbody></table>
+							<hr class="hrcolor" size="1" width="100%">
+							<div class="signature">Free and open source Bitcoin exchange rate monitor and alerting program: <a href="http://forum.bitcoin.org/index.php?topic=14818.0" target="_blank">http://forum.bitcoin.org/index.php?topic=14818.0</a><br>To
+ show your support and appreciation for my bitcoin exchange rate watcher
+ send me a donation: 1MTkF9ZTcXtgvQX245TwTL2Ko3NMvJHz6P</div>
+						</td>
+					</tr>
+				</tbody></table>
+			</td></tr>
+		</tbody></table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg201816"></a>
+		<table border="0" cellpadding="3" cellspacing="0" width="100%">
+			<tbody><tr><td class="windowbg2">
+				<table style="table-layout: fixed;" cellpadding="5" cellspacing="0" width="100%">
+					<tbody><tr>
+								<td rowspan="2" style="overflow: hidden;" class="poster_info" valign="top" width="16%">
+							<b><a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;action=profile;u=15187" title="View the profile of tymothy">tymothy</a></b>
+							<div class="smalltext">
+								Full Member<br>
+								<img src="_post-Dateien/star.gif" alt="*" border="0"><img src="_post-Dateien/star.gif" alt="*" border="0"><img src="_post-Dateien/star.gif" alt="*" border="0"><br>
+								<img src="_post-Dateien/useroff.gif" alt="Offline" style="margin-top: 2px;" border="0"><span class="smalltext"> Offline</span><br><br>
+								Posts: 189<br>
+								<br>
+								
+								
+								
+								<br>
+								<a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;action=profile;u=15187"><img src="_post-Dateien/profile_sm.gif" alt="View Profile" title="View Profile" border="0"></a><br>
+						  <br><a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;action=ignore;u=15187;topic=14818;msg=201816">Ignore</a>
+							</div>
+						</td>
+								<td style="padding: 2px;" class="td_headerandpost" height="100%" valign="top" width="85%">
+							<table border="0" width="100%"><tbody><tr>
+								<td valign="middle"><a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;topic=14818.msg201816#msg201816"><img src="_post-Dateien/xx.gif" alt="" border="0"></a></td>
+								<td valign="middle">
+												<div style="font-weight: bold;" class="subject" id="subject_201816">
+										<a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;topic=14818.msg201816#msg201816">Re: Bitcoin Exchange Watcher program [Open source] (autoit)</a>
+									</div>
+												<div class="smalltext">June 11, 2011, 04:55:57 PM</div></td>
+										  <td style="font-size: smaller; padding-top: 4px;" class="td_buttons" align="right" height="20" valign="middle"><div id="ignmsgbttns14" style="visibility: visible;"> &nbsp;<a class="message_number" style="vertical-align: middle;" href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;topic=14818.msg201816#msg201816">#14</a>
+		 </div>
+								</td>
+							</tr></tbody></table>
+									 <hr class="hrcolor" style="margin-top: 4px;" size="1" width="100%">
+							<div class="post">Running on a 15.6" 1920x1080 screen and the digits are partially cutoff. Could you allow the window to be resized?</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="smalltext" valign="bottom" width="85%">
+							<table style="table-layout: fixed;" border="0" width="100%"><tbody><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td class="smalltext" id="modified_201816" valign="bottom">
+								</td>
+								<td class="smalltext" align="right" valign="bottom">
+									<img src="_post-Dateien/ip.gif" alt="" border="0">
+								</td>
+							</tr></tbody></table>
+							<hr class="hrcolor" size="1" width="100%">
+							<div class="signature">Tradehill, the new MtGox alternative with more payment options and lower fees--sign up using my referral link to save 10%: <a href="http://www.tradehill.com/?r=TH-R13081" target="_blank">http://www.tradehill.com/?r=TH-R13081</a><br><br>Save 25% off your mining rig electric bill! Switch to Ambit Energy and save!: <a href="http://www.a2780879.joinambit.com/" target="_blank">www.A2780879.joinambit.com</a><br>Donate! 14xTxKnsPeHiMSZ3</div>
+						</td>
+					</tr>
+				</tbody></table>
+			</td></tr>
+		</tbody></table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg201838"></a>
+		<table border="0" cellpadding="3" cellspacing="0" width="100%">
+			<tbody><tr><td class="windowbg">
+				<table style="table-layout: fixed;" cellpadding="5" cellspacing="0" width="100%">
+					<tbody><tr>
+								<td rowspan="2" style="overflow: hidden;" class="poster_info" valign="top" width="16%">
+							<b><a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;action=profile;u=21472" title="View the profile of Morthawt">Morthawt</a></b>
+							<div class="smalltext">
+								Jr. Member<br>
+								<img src="_post-Dateien/star.gif" alt="*" border="0"><img src="_post-Dateien/star.gif" alt="*" border="0"><br>
+								<img src="_post-Dateien/useroff.gif" alt="Offline" style="margin-top: 2px;" border="0"><span class="smalltext"> Offline</span><br><br>
+								Posts: 31<br>
+								<br>
+								<div style="overflow: auto; width: 100%;"><img src="_post-Dateien/avatar_21472.png" alt="" class="avatar" border="0"></div><br>
+								Hey there! I am Wesley G aka Morthawt<br>
+								<br>
+								
+								
+								
+								<br>
+								<a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;action=profile;u=21472"><img src="_post-Dateien/profile_sm.gif" alt="View Profile" title="View Profile" border="0"></a>
+								<a href="http://www.morthawt.com/" title="Morthawt.com" target="_blank"><img src="_post-Dateien/www_sm.gif" alt="WWW" border="0"></a><br>
+						  <br><a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;action=ignore;u=21472;topic=14818;msg=201838">Ignore</a>
+							</div>
+						</td>
+								<td style="padding: 2px;" class="td_headerandpost" height="100%" valign="top" width="85%">
+							<table border="0" width="100%"><tbody><tr>
+								<td valign="middle"><a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;topic=14818.msg201838#msg201838"><img src="_post-Dateien/xx.gif" alt="" border="0"></a></td>
+								<td valign="middle">
+												<div style="font-weight: bold;" class="subject" id="subject_201838">
+										<a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;topic=14818.msg201838#msg201838">Re: Bitcoin Exchange Watcher program [Open source] (autoit)</a>
+									</div>
+												<div class="smalltext">June 11, 2011, 04:59:19 PM</div></td>
+										  <td style="font-size: smaller; padding-top: 4px;" class="td_buttons" align="right" height="20" valign="middle"><div id="ignmsgbttns15" style="visibility: visible;"> &nbsp;<a class="message_number" style="vertical-align: middle;" href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;topic=14818.msg201838#msg201838">#15</a>
+		 </div>
+								</td>
+							</tr></tbody></table>
+									 <hr class="hrcolor" style="margin-top: 4px;" size="1" width="100%">
+							<div class="post">is it cut off from the edge of the window, or are parts inside the window cut off.</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="smalltext" valign="bottom" width="85%">
+							<table style="table-layout: fixed;" border="0" width="100%"><tbody><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td class="smalltext" id="modified_201838" valign="bottom">
+								</td>
+								<td class="smalltext" align="right" valign="bottom">
+									<img src="_post-Dateien/ip.gif" alt="" border="0">
+								</td>
+							</tr></tbody></table>
+							<hr class="hrcolor" size="1" width="100%">
+							<div class="signature">Free and open source Bitcoin exchange rate monitor and alerting program: <a href="http://forum.bitcoin.org/index.php?topic=14818.0" target="_blank">http://forum.bitcoin.org/index.php?topic=14818.0</a><br>To
+ show your support and appreciation for my bitcoin exchange rate watcher
+ send me a donation: 1MTkF9ZTcXtgvQX245TwTL2Ko3NMvJHz6P</div>
+						</td>
+					</tr>
+				</tbody></table>
+			</td></tr>
+		</tbody></table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg201847"></a>
+		<table border="0" cellpadding="3" cellspacing="0" width="100%">
+			<tbody><tr><td class="windowbg2">
+				<table style="table-layout: fixed;" cellpadding="5" cellspacing="0" width="100%">
+					<tbody><tr>
+								<td rowspan="2" style="overflow: hidden;" class="poster_info" valign="top" width="16%">
+							<b><a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;action=profile;u=21472" title="View the profile of Morthawt">Morthawt</a></b>
+							<div class="smalltext">
+								Jr. Member<br>
+								<img src="_post-Dateien/star.gif" alt="*" border="0"><img src="_post-Dateien/star.gif" alt="*" border="0"><br>
+								<img src="_post-Dateien/useroff.gif" alt="Offline" style="margin-top: 2px;" border="0"><span class="smalltext"> Offline</span><br><br>
+								Posts: 31<br>
+								<br>
+								<div style="overflow: auto; width: 100%;"><img src="_post-Dateien/avatar_21472.png" alt="" class="avatar" border="0"></div><br>
+								Hey there! I am Wesley G aka Morthawt<br>
+								<br>
+								
+								
+								
+								<br>
+								<a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;action=profile;u=21472"><img src="_post-Dateien/profile_sm.gif" alt="View Profile" title="View Profile" border="0"></a>
+								<a href="http://www.morthawt.com/" title="Morthawt.com" target="_blank"><img src="_post-Dateien/www_sm.gif" alt="WWW" border="0"></a><br>
+						  <br><a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;action=ignore;u=21472;topic=14818;msg=201847">Ignore</a>
+							</div>
+						</td>
+								<td style="padding: 2px;" class="td_headerandpost" height="100%" valign="top" width="85%">
+							<table border="0" width="100%"><tbody><tr>
+								<td valign="middle"><a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;topic=14818.msg201847#msg201847"><img src="_post-Dateien/xx.gif" alt="" border="0"></a></td>
+								<td valign="middle">
+												<div style="font-weight: bold;" class="subject" id="subject_201847">
+										<a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;topic=14818.msg201847#msg201847">Re: Bitcoin Exchange Watcher program [Open source] (autoit)</a>
+									</div>
+												<div class="smalltext">June 11, 2011, 05:01:04 PM</div></td>
+										  <td style="font-size: smaller; padding-top: 4px;" class="td_buttons" align="right" height="20" valign="middle"><div id="ignmsgbttns16" style="visibility: visible;"> &nbsp;<a class="message_number" style="vertical-align: middle;" href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;topic=14818.msg201847#msg201847">#16</a>
+		 </div>
+								</td>
+							</tr></tbody></table>
+									 <hr class="hrcolor" style="margin-top: 4px;" size="1" width="100%">
+							<div class="post">Can you give me a printscreen of it please so I know "how" to fix it.</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="smalltext" valign="bottom" width="85%">
+							<table style="table-layout: fixed;" border="0" width="100%"><tbody><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td class="smalltext" id="modified_201847" valign="bottom">
+								</td>
+								<td class="smalltext" align="right" valign="bottom">
+									<img src="_post-Dateien/ip.gif" alt="" border="0">
+								</td>
+							</tr></tbody></table>
+							<hr class="hrcolor" size="1" width="100%">
+							<div class="signature">Free and open source Bitcoin exchange rate monitor and alerting program: <a href="http://forum.bitcoin.org/index.php?topic=14818.0" target="_blank">http://forum.bitcoin.org/index.php?topic=14818.0</a><br>To
+ show your support and appreciation for my bitcoin exchange rate watcher
+ send me a donation: 1MTkF9ZTcXtgvQX245TwTL2Ko3NMvJHz6P</div>
+						</td>
+					</tr>
+				</tbody></table>
+			</td></tr>
+		</tbody></table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg202659"></a>
+		<table border="0" cellpadding="3" cellspacing="0" width="100%">
+			<tbody><tr><td class="windowbg">
+				<table style="table-layout: fixed;" cellpadding="5" cellspacing="0" width="100%">
+					<tbody><tr>
+								<td rowspan="2" style="overflow: hidden;" class="poster_info" valign="top" width="16%">
+							<b><a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;action=profile;u=15187" title="View the profile of tymothy">tymothy</a></b>
+							<div class="smalltext">
+								Full Member<br>
+								<img src="_post-Dateien/star.gif" alt="*" border="0"><img src="_post-Dateien/star.gif" alt="*" border="0"><img src="_post-Dateien/star.gif" alt="*" border="0"><br>
+								<img src="_post-Dateien/useroff.gif" alt="Offline" style="margin-top: 2px;" border="0"><span class="smalltext"> Offline</span><br><br>
+								Posts: 189<br>
+								<br>
+								
+								
+								
+								<br>
+								<a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;action=profile;u=15187"><img src="_post-Dateien/profile_sm.gif" alt="View Profile" title="View Profile" border="0"></a><br>
+						  <br><a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;action=ignore;u=15187;topic=14818;msg=202659">Ignore</a>
+							</div>
+						</td>
+								<td style="padding: 2px;" class="td_headerandpost" height="100%" valign="top" width="85%">
+							<table border="0" width="100%"><tbody><tr>
+								<td valign="middle"><a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;topic=14818.msg202659#msg202659"><img src="_post-Dateien/xx.gif" alt="" border="0"></a></td>
+								<td valign="middle">
+												<div style="font-weight: bold;" class="subject" id="subject_202659">
+										<a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;topic=14818.msg202659#msg202659">Re: Bitcoin Exchange Watcher program [Open source] (autoit)</a>
+									</div>
+												<div class="smalltext">June 11, 2011, 07:37:37 PM</div></td>
+										  <td style="font-size: smaller; padding-top: 4px;" class="td_buttons" align="right" height="20" valign="middle"><div id="ignmsgbttns17" style="visibility: visible;"> &nbsp;<a class="message_number" style="vertical-align: middle;" href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;topic=14818.msg202659#msg202659">#17</a>
+		 </div>
+								</td>
+							</tr></tbody></table>
+									 <hr class="hrcolor" style="margin-top: 4px;" size="1" width="100%">
+							<div class="post"><div class="quoteheader"><a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;topic=14818.msg201847#msg201847">Quote from: Morthawt on June 11, 2011, 05:01:04 PM</a></div><div class="quote">Can you give me a printscreen of it please so I know "how" to fix it.<br></div><br><img class="userimg" src="_post-Dateien/10rpmhw.jpg" alt="" border="0"></div>
+						</td>
+					</tr>
+					<tr>
+						<td class="smalltext" valign="bottom" width="85%">
+							<table style="table-layout: fixed;" border="0" width="100%"><tbody><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td class="smalltext" id="modified_202659" valign="bottom">
+								</td>
+								<td class="smalltext" align="right" valign="bottom">
+									<img src="_post-Dateien/ip.gif" alt="" border="0">
+								</td>
+							</tr></tbody></table>
+							<hr class="hrcolor" size="1" width="100%">
+							<div class="signature">Tradehill, the new MtGox alternative with more payment options and lower fees--sign up using my referral link to save 10%: <a href="http://www.tradehill.com/?r=TH-R13081" target="_blank">http://www.tradehill.com/?r=TH-R13081</a><br><br>Save 25% off your mining rig electric bill! Switch to Ambit Energy and save!: <a href="http://www.a2780879.joinambit.com/" target="_blank">www.A2780879.joinambit.com</a><br>Donate! 14xTxKnsPeHiMSZ3</div>
+						</td>
+					</tr>
+				</tbody></table>
+			</td></tr>
+		</tbody></table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg202701"></a>
+		<table border="0" cellpadding="3" cellspacing="0" width="100%">
+			<tbody><tr><td class="windowbg2">
+				<table style="table-layout: fixed;" cellpadding="5" cellspacing="0" width="100%">
+					<tbody><tr>
+								<td rowspan="2" style="overflow: hidden;" class="poster_info" valign="top" width="16%">
+							<b><a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;action=profile;u=18786" title="View the profile of Alex-Z">Alex-Z</a></b>
+							<div class="smalltext">
+								Jr. Member<br>
+								<img src="_post-Dateien/star.gif" alt="*" border="0"><img src="_post-Dateien/star.gif" alt="*" border="0"><br>
+								<img src="_post-Dateien/useroff.gif" alt="Offline" style="margin-top: 2px;" border="0"><span class="smalltext"> Offline</span><br><br>
+								Posts: 34<br>
+								<br>
+								
+								
+								
+								<br>
+								<a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;action=profile;u=18786"><img src="_post-Dateien/profile_sm.gif" alt="View Profile" title="View Profile" border="0"></a><br>
+						  <br><a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;action=ignore;u=18786;topic=14818;msg=202701">Ignore</a>
+							</div>
+						</td>
+								<td style="padding: 2px;" class="td_headerandpost" height="100%" valign="top" width="85%">
+							<table border="0" width="100%"><tbody><tr>
+								<td valign="middle"><a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;topic=14818.msg202701#msg202701"><img src="_post-Dateien/xx.gif" alt="" border="0"></a></td>
+								<td valign="middle">
+												<div style="font-weight: bold;" class="subject" id="subject_202701">
+										<a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;topic=14818.msg202701#msg202701">Re: Bitcoin Exchange Watcher program [Open source] (autoit)</a>
+									</div>
+												<div class="smalltext">June 11, 2011, 07:47:34 PM</div></td>
+										  <td style="font-size: smaller; padding-top: 4px;" class="td_buttons" align="right" height="20" valign="middle"><div id="ignmsgbttns18" style="visibility: visible;"> &nbsp;<a class="message_number" style="vertical-align: middle;" href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;topic=14818.msg202701#msg202701">#18</a>
+		 </div>
+								</td>
+							</tr></tbody></table>
+									 <hr class="hrcolor" style="margin-top: 4px;" size="1" width="100%">
+							<div class="post"><div class="quoteheader"><a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;topic=14818.msg201392#msg201392">Quote from: Morthawt on June 11, 2011, 03:43:19 PM</a></div><div class="quote">V 1.4.1.1 has been released. Check the first post for change details and a new screenshot. &nbsp;<img src="_post-Dateien/cool.gif" alt="Cool" border="0"><br><br>Regarding
+ adding balances though, at this time I am unaware of any way to "post" 
+information via AutoIt3. This would be required to make the API login to
+ receive information.<br></div><br>You can,<br><br>Something like : <div class="codeheader">Code:</div><div class="code"><pre style="margin-top: 0; display: inline;">#include &lt;IE.au3&gt;<br>#include &lt;http.au3&gt;<br><br>$Header = "Content-Type: application/x-www-form-urlencoded"<br>$Host = "www.website.com"<br>$File = "/whatever.php"<br>$URL = "http://" &amp; $Host &amp; $File<br>$PostData = "name=steve"<br><br><br><br>$Socket = _HTTPConnect($Host)<br>_HTTPPost($Host, $File, $Socket, $PostData)<br>$recv = _HTTPRead($Socket,0)<br>MsgBox(0,"","BODY: "&amp;$recv&amp;" ERROR: "&amp;@error)<br>_HTTPClose($Socket)</pre></div></div>
+						</td>
+					</tr>
+					<tr>
+						<td class="smalltext" valign="bottom" width="85%">
+							<table style="table-layout: fixed;" border="0" width="100%"><tbody><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td class="smalltext" id="modified_202701" valign="bottom">
+								</td>
+								<td class="smalltext" align="right" valign="bottom">
+									<img src="_post-Dateien/ip.gif" alt="" border="0">
+								</td>
+							</tr></tbody></table>
+						</td>
+					</tr>
+				</tbody></table>
+			</td></tr>
+		</tbody></table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg202747"></a>
+		<table border="0" cellpadding="3" cellspacing="0" width="100%">
+			<tbody><tr><td class="windowbg">
+				<table style="table-layout: fixed;" cellpadding="5" cellspacing="0" width="100%">
+					<tbody><tr>
+								<td rowspan="2" style="overflow: hidden;" class="poster_info" valign="top" width="16%">
+							<b><a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;action=profile;u=21472" title="View the profile of Morthawt">Morthawt</a></b>
+							<div class="smalltext">
+								Jr. Member<br>
+								<img src="_post-Dateien/star.gif" alt="*" border="0"><img src="_post-Dateien/star.gif" alt="*" border="0"><br>
+								<img src="_post-Dateien/useroff.gif" alt="Offline" style="margin-top: 2px;" border="0"><span class="smalltext"> Offline</span><br><br>
+								Posts: 31<br>
+								<br>
+								<div style="overflow: auto; width: 100%;"><img src="_post-Dateien/avatar_21472.png" alt="" class="avatar" border="0"></div><br>
+								Hey there! I am Wesley G aka Morthawt<br>
+								<br>
+								
+								
+								
+								<br>
+								<a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;action=profile;u=21472"><img src="_post-Dateien/profile_sm.gif" alt="View Profile" title="View Profile" border="0"></a>
+								<a href="http://www.morthawt.com/" title="Morthawt.com" target="_blank"><img src="_post-Dateien/www_sm.gif" alt="WWW" border="0"></a><br>
+						  <br><a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;action=ignore;u=21472;topic=14818;msg=202747">Ignore</a>
+							</div>
+						</td>
+								<td style="padding: 2px;" class="td_headerandpost" height="100%" valign="top" width="85%">
+							<table border="0" width="100%"><tbody><tr>
+								<td valign="middle"><a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;topic=14818.msg202747#msg202747"><img src="_post-Dateien/xx.gif" alt="" border="0"></a></td>
+								<td valign="middle">
+												<div style="font-weight: bold;" class="subject" id="subject_202747">
+										<a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;topic=14818.msg202747#msg202747">Re: Bitcoin Exchange Watcher program [Open source] (autoit)</a>
+									</div>
+												<div class="smalltext">June 11, 2011, 07:57:39 PM</div></td>
+										  <td style="font-size: smaller; padding-top: 4px;" class="td_buttons" align="right" height="20" valign="middle"><div id="ignmsgbttns19" style="visibility: visible;"> &nbsp;<a class="message_number" style="vertical-align: middle;" href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;topic=14818.msg202747#msg202747">#19</a>
+		 </div>
+								</td>
+							</tr></tbody></table>
+									 <hr class="hrcolor" style="margin-top: 4px;" size="1" width="100%">
+							<div class="post">You have altered your windows settings to use 
+large fonts or something and altered the title bar buttons size which is
+ reducing the amount of space for the text. I have been working on 
+adding some check for the bug I fixed to make sure it hopefully won't 
+occur with something else. Plus I have been working on a way to make it 
+not alert you erroneously when the API link has too many connections 
+going to it. I also reduced its connections to 1 per 10 seconds.<br><br>I
+ have also done my best to resize things so "most" things will fit on 
+your screen but I can not guarentee this because you are not using 
+standard windows settings. The only way I could 100% fix it would be to 
+make all the text very tiny so that it appears normal size on your 
+screen which would result in it being useless to 98% of everyone else 
+because the text would be minuscule.<br><br>I hope this version works better for you. Download link in the first post.</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="smalltext" valign="bottom" width="85%">
+							<table style="table-layout: fixed;" border="0" width="100%"><tbody><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td class="smalltext" id="modified_202747" valign="bottom">
+								</td>
+								<td class="smalltext" align="right" valign="bottom">
+									<img src="_post-Dateien/ip.gif" alt="" border="0">
+								</td>
+							</tr></tbody></table>
+							<hr class="hrcolor" size="1" width="100%">
+							<div class="signature">Free and open source Bitcoin exchange rate monitor and alerting program: <a href="http://forum.bitcoin.org/index.php?topic=14818.0" target="_blank">http://forum.bitcoin.org/index.php?topic=14818.0</a><br>To
+ show your support and appreciation for my bitcoin exchange rate watcher
+ send me a donation: 1MTkF9ZTcXtgvQX245TwTL2Ko3NMvJHz6P</div>
+						</td>
+					</tr>
+				</tbody></table>
+			</td></tr>
+		</tbody></table>
+	</td></tr>
+	<tr><td style="padding: 1px 1px 0 1px;">
+		<a name="msg202768"></a>
+		<table border="0" cellpadding="3" cellspacing="0" width="100%">
+			<tbody><tr><td class="windowbg2">
+				<table style="table-layout: fixed;" cellpadding="5" cellspacing="0" width="100%">
+					<tbody><tr>
+								<td rowspan="2" style="overflow: hidden;" class="poster_info" valign="top" width="16%">
+							<b><a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;action=profile;u=21472" title="View the profile of Morthawt">Morthawt</a></b>
+							<div class="smalltext">
+								Jr. Member<br>
+								<img src="_post-Dateien/star.gif" alt="*" border="0"><img src="_post-Dateien/star.gif" alt="*" border="0"><br>
+								<img src="_post-Dateien/useroff.gif" alt="Offline" style="margin-top: 2px;" border="0"><span class="smalltext"> Offline</span><br><br>
+								Posts: 31<br>
+								<br>
+								<div style="overflow: auto; width: 100%;"><img src="_post-Dateien/avatar_21472.png" alt="" class="avatar" border="0"></div><br>
+								Hey there! I am Wesley G aka Morthawt<br>
+								<br>
+								
+								
+								
+								<br>
+								<a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;action=profile;u=21472"><img src="_post-Dateien/profile_sm.gif" alt="View Profile" title="View Profile" border="0"></a>
+								<a href="http://www.morthawt.com/" title="Morthawt.com" target="_blank"><img src="_post-Dateien/www_sm.gif" alt="WWW" border="0"></a><br>
+						  <br><a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;action=ignore;u=21472;topic=14818;msg=202768">Ignore</a>
+							</div>
+						</td>
+								<td style="padding: 2px;" class="td_headerandpost" height="100%" valign="top" width="85%">
+							<table border="0" width="100%"><tbody><tr>
+								<td valign="middle"><a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;topic=14818.msg202768#msg202768"><img src="_post-Dateien/xx.gif" alt="" border="0"></a></td>
+								<td valign="middle">
+												<div style="font-weight: bold;" class="subject" id="subject_202768">
+										<a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;topic=14818.msg202768#msg202768">Re: Bitcoin Exchange Watcher program [Open source] (autoit)</a>
+									</div>
+												<div class="smalltext">June 11, 2011, 08:02:32 PM</div></td>
+										  <td style="font-size: smaller; padding-top: 4px;" class="td_buttons" align="right" height="20" valign="middle"><div id="ignmsgbttns20" style="visibility: visible;"> &nbsp;<a class="message_number" style="vertical-align: middle;" href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;topic=14818.msg202768#msg202768">#20</a>
+		 </div>
+								</td>
+							</tr></tbody></table>
+									 <hr class="hrcolor" style="margin-top: 4px;" size="1" width="100%">
+							<div class="post"><div class="quoteheader"><a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;topic=14818.msg202701#msg202701">Quote from: Alex-Z on June 11, 2011, 07:47:34 PM</a></div><div class="quote"><div class="quoteheader"><a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;topic=14818.msg201392#msg201392">Quote from: Morthawt on June 11, 2011, 03:43:19 PM</a></div><div class="quote">V 1.4.1.1 has been released. Check the first post for change details and a new screenshot. &nbsp;<img src="_post-Dateien/cool.gif" alt="Cool" border="0"><br><br>Regarding
+ adding balances though, at this time I am unaware of any way to "post" 
+information via AutoIt3. This would be required to make the API login to
+ receive information.<br></div><br>You can,<br><br>Something like : <div class="codeheader">Code:</div><div class="code"><pre style="margin-top: 0; display: inline;">#include &lt;IE.au3&gt;<br>#include &lt;http.au3&gt;<br><br>$Header = "Content-Type: application/x-www-form-urlencoded"<br>$Host = "www.website.com"<br>$File = "/whatever.php"<br>$URL = "http://" &amp; $Host &amp; $File<br>$PostData = "name=steve"<br><br><br><br>$Socket = _HTTPConnect($Host)<br>_HTTPPost($Host, $File, $Socket, $PostData)<br>$recv = _HTTPRead($Socket,0)<br>MsgBox(0,"","BODY: "&amp;$recv&amp;" ERROR: "&amp;@error)<br>_HTTPClose($Socket)</pre></div></div><br>yea
+ its hypothetically possible but it would mean manually going in and 
+editing all the GUI again which has to be edited in text plus then do 
+all that specialized manual http connection code which is far too much. 
+Plus it would only work for people using mtgox any way. At least this is
+ the market in general so that people can then trade on what ever sites 
+they like to trade on. If it were built in to AutoIt3 to be able to 
+"post" then I would use it, but that takes too much memorizing and I 
+hate copy/pasting code from sites to do things. Im a "either I 
+understand it and can do it every time any time, or I don't do that" I 
+hate copy/pasting code so much because it is not "my" code or something I
+ can write from scratch.</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="smalltext" valign="bottom" width="85%">
+							<table style="table-layout: fixed;" border="0" width="100%"><tbody><tr>
+								<td colspan="2" class="smalltext" width="100%">
+								</td>
+							</tr><tr>
+								<td class="smalltext" id="modified_202768" valign="bottom">
+								</td>
+								<td class="smalltext" align="right" valign="bottom">
+									<img src="_post-Dateien/ip.gif" alt="" border="0">
+								</td>
+							</tr></tbody></table>
+							<hr class="hrcolor" size="1" width="100%">
+							<div class="signature">Free and open source Bitcoin exchange rate monitor and alerting program: <a href="http://forum.bitcoin.org/index.php?topic=14818.0" target="_blank">http://forum.bitcoin.org/index.php?topic=14818.0</a><br>To
+ show your support and appreciation for my bitcoin exchange rate watcher
+ send me a donation: 1MTkF9ZTcXtgvQX245TwTL2Ko3NMvJHz6P</div>
+						</td>
+					</tr>
+				</tbody></table>
+			</td></tr>
+		</tbody></table>
+	</td></tr>
+	<tr><td style="padding: 0 0 1px 0;"></td></tr>
+</tbody></table>
+<a name="lastPost"></a>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+	<tbody><tr>
+		<td class="middletext">Pages:  <b>1</b> <a class="navPages" href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;topic=14818.20">2</a> <a class="navPages" href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;topic=14818.40">3</a> <a class="navPages" href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;topic=14818.20">»</a> &nbsp;<a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;topic=14818.0;all">All</a> </td>
+		<td style="padding-right: 1ex;" align="right">
+			<table cellpadding="0" cellspacing="0">
+				<tbody><tr>
+					
+		<td class="maintab_first">&nbsp;</td>
+		<td class="maintab_back"><a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;action=printpage;topic=14818.0" target="_blank">Print</a></td>
+		<td class="maintab_last">&nbsp;</td>
+				</tr>
+			</tbody></table>
+		</td>
+	</tr>
+</tbody></table>
+<script language="JavaScript" type="text/javascript" src="_post-Dateien/xml_topic.js"></script>
+<script language="JavaScript" type="text/javascript">//<!--
+	quickReplyCollapsed = true;
+
+	smf_topic = 14818;
+	smf_start = 0;
+	smf_show_modify = 0;
+
+	// On quick modify, this is what the body will look like.
+	var smf_template_body_edit = '<div id="error_box" style="padding: 4px; color: red;"></div><textarea class="editor" name="message" rows="12" style="width: 94%; margin-bottom: 10px;">%body%</textarea><br /><input type="hidden" name="sc" value="88abddaf6361c7d41c31fa6afef68689" /><input type="hidden" name="topic" value="14818" /><input type="hidden" name="msg" value="%msg_id%" /><div style="text-align: center;"><input type="submit" name="post" value="Save" onclick="return modify_save(\'88abddaf6361c7d41c31fa6afef68689\');" accesskey="s" />  <input type="submit" name="cancel" value="Cancel" onclick="return modify_cancel();" /></div>';
+
+	// And this is the replacement for the subject.
+	var smf_template_subject_edit = '<input type="text" name="subject" value="%subject%" size="60" style="width: 99%;"  maxlength="80" />';
+
+	// Restore the message to this after editing.
+	var smf_template_body_normal = '%body%';
+	var smf_template_subject_normal = '<a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;topic=14818.msg%msg_id%#msg%msg_id%">%subject%</a>';
+	var smf_template_top_subject = "Topic: %subject%  (Read 6196 times)"
+
+	if (window.XMLHttpRequest)
+		showModifyButtons();
+// --></script>
+<table style="margin-bottom: 1ex;" border="0" cellpadding="0" cellspacing="0" width="100%">
+		<tbody><tr>
+				<td valign="top"><div class="nav" style="font-size: smaller; margin-bottom: 2ex; margin-top: 2ex;"><b><a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;" class="nav">Bitcoin Forum</a></b>&nbsp;&gt;&nbsp;<b><a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;#1" class="nav">Bitcoin</a></b>&nbsp;&gt;&nbsp;<b><a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;board=1.0" class="nav">Bitcoin Discussion</a></b> (Moderators: <a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;action=profile;u=5266" title="Board Moderator">hazek</a>, <a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;action=profile;u=17261" title="Board Moderator">tysat</a>)&nbsp;&gt;&nbsp;<b><a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;topic=14818.0" class="nav">Bitcoin Exchange Watcher program V 1.5.2 [Open source]</a></b></div></td> 
+				<td class="nav" align="right" valign="top"> <a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;topic=14818.0;prev_next=prev#new">« previous topic</a> <a href="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;topic=14818.0;prev_next=next#new">next topic »</a></td>
+		</tr>
+</tbody></table>
+	<table style="margin-left: 1ex;" border="0" cellpadding="0" cellspacing="0">
+		<tbody><tr>
+			<td>&nbsp;</td>
+		</tr>
+	</tbody></table>
+</form>
+<div class="tborder"><div class="titlebg2" style="padding: 4px;" align="right">
+	<form action="https://bitcointalk.org/index.php?PHPSESSID=a945qf05djjdgqo1pul1vjioj0&amp;" method="get" accept-charset="ISO-8859-1" style="padding:0; margin: 0;">
+		<span class="smalltext">Jump to:</span>
+		<select name="jumpto" id="jumpto" onchange="if (this.selectedIndex > 0 &amp;&amp; this.options[this.selectedIndex].value) window.location.href = smf_scripturl + this.options[this.selectedIndex].value.substr(smf_scripturl.indexOf('?') == -1 || this.options[this.selectedIndex].value.substr(0, 1) != '?' ? 0 : 1);">
+			<option value="">Please select a destination:</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#1">Bitcoin</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="?board=1.0" selected="selected"> =&gt; Bitcoin Discussion</option>
+			<option value="?board=74.0"> ===&gt; Legal</option>
+			<option value="?board=77.0"> ===&gt; Press</option>
+			<option value="?board=86.0"> ===&gt; Meetups</option>
+			<option value="?board=87.0"> ===&gt; Important Announcements</option>
+			<option value="?board=6.0"> =&gt; Development &amp; Technical Discussion</option>
+			<option value="?board=37.0"> ===&gt; Alternative clients</option>
+			<option value="?board=99.0"> =====&gt; MultiBit</option>
+			<option value="?board=98.0"> =====&gt; Electrum</option>
+			<option value="?board=100.0"> =====&gt; Bitcoin Wallet for Android</option>
+			<option value="?board=97.0"> =====&gt; Armory</option>
+			<option value="?board=14.0"> =&gt; Mining</option>
+			<option value="?board=40.0"> ===&gt; Mining support</option>
+			<option value="?board=41.0"> ===&gt; Pools</option>
+			<option value="?board=42.0"> ===&gt; Mining software (miners)</option>
+			<option value="?board=44.0"> ===&gt; Hardware</option>
+			<option value="?board=76.0"> =====&gt; Custom hardware</option>
+			<option value="?board=81.0"> ===&gt; Mining speculation</option>
+			<option value="?board=4.0"> =&gt; Technical Support</option>
+			<option value="?board=12.0"> =&gt; Project Development</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#3">Economy</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="?board=7.0"> =&gt; Economics</option>
+			<option value="?board=57.0"> ===&gt; Speculation</option>
+			<option value="?board=5.0"> =&gt; Marketplace</option>
+			<option value="?board=51.0"> ===&gt; Goods</option>
+			<option value="?board=75.0"> =====&gt; Computer hardware</option>
+			<option value="?board=93.0"> =====&gt; Digital goods</option>
+			<option value="?board=52.0"> ===&gt; Services</option>
+			<option value="?board=53.0"> ===&gt; Currency exchange</option>
+			<option value="?board=56.0"> ===&gt; Gambling</option>
+			<option value="?board=71.0"> =====&gt; Games and rounds</option>
+			<option value="?board=65.0"> ===&gt; Lending</option>
+			<option value="?board=88.0"> =====&gt; Long-term offers</option>
+			<option value="?board=78.0"> ===&gt; Securities</option>
+			<option value="?board=73.0"> ===&gt; Auctions</option>
+			<option value="?board=84.0"> ===&gt; Service Announcements</option>
+			<option value="?board=85.0"> ===&gt; Service Discussion</option>
+			<option value="?board=8.0"> =&gt; Trading Discussion</option>
+			<option value="?board=83.0"> ===&gt; Scam Accusations</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#4">Other</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="?board=24.0"> =&gt; Meta</option>
+			<option value="?board=39.0"> =&gt; Newbies</option>
+			<option value="?board=34.0"> =&gt; Politics &amp; Society</option>
+			<option value="?board=9.0"> =&gt; Off-topic</option>
+			<option value="?board=67.0"> =&gt; Alternate cryptocurrencies</option>
+			<option value="?board=59.0"> =&gt; Archival</option>
+			<option value="?board=17.0"> ===&gt; Chinese students</option>
+			<option value="?board=25.0"> ===&gt; Obsolete (buying)</option>
+			<option value="?board=26.0"> ===&gt; Obsolete (selling)</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="#5">Local</option>
+			<option value="" disabled="disabled">-----------------------------</option>
+			<option value="?board=27.0"> =&gt; Español (Spanish)</option>
+			<option value="?board=31.0"> ===&gt; Mercado y Economía</option>
+			<option value="?board=32.0"> ===&gt; Hardware y Minería</option>
+			<option value="?board=33.0"> ===&gt; Esquina Libre</option>
+			<option value="?board=101.0"> ===&gt; Mercadillo</option>
+			<option value="?board=102.0"> =====&gt; Mexico</option>
+			<option value="?board=103.0"> =====&gt; Argentina</option>
+			<option value="?board=104.0"> =====&gt; España</option>
+			<option value="?board=105.0"> =====&gt; Centroamerica y Caribe</option>
+			<option value="?board=30.0"> =&gt; &#20013;&#25991; (Chinese)</option>
+			<option value="?board=16.0"> =&gt; Deutsch (German)</option>
+			<option value="?board=35.0"> ===&gt; Biete</option>
+			<option value="?board=36.0"> ===&gt; Suche</option>
+			<option value="?board=62.0"> ===&gt; Anfänger und Hilfe</option>
+			<option value="?board=60.0"> ===&gt; Mining (Deutsch)</option>
+			<option value="?board=61.0"> ===&gt; Trading und Spekulation</option>
+			<option value="?board=63.0"> ===&gt; Projektentwicklung</option>
+			<option value="?board=64.0"> ===&gt; Off-Topic (Deutsch)</option>
+			<option value="?board=95.0"> =&gt; &#1506;&#1489;&#1512;&#1497;&#1514; (Hebrew)</option>
+			<option value="?board=13.0"> =&gt; Français (French)</option>
+			<option value="?board=47.0"> ===&gt; Bases de Bitcoin</option>
+			<option value="?board=48.0"> ===&gt; Mining et Hardware</option>
+			<option value="?board=49.0"> ===&gt; Place de marché</option>
+			<option value="?board=54.0"> ===&gt; Wiki, documentation et traduction</option>
+			<option value="?board=50.0"> ===&gt; Hors-sujet</option>
+			<option value="?board=89.0"> =&gt; India</option>
+			<option value="?board=28.0"> =&gt; Italiano (Italian)</option>
+			<option value="?board=46.0"> ===&gt; Mercato valute</option>
+			<option value="?board=107.0"> ===&gt; Beni e servizi</option>
+			<option value="?board=79.0"> =&gt; Nederlands (Dutch)</option>
+			<option value="?board=80.0"> ===&gt; Markt</option>
+			<option value="?board=94.0"> ===&gt; Gokken/lotterijen</option>
+			<option value="?board=82.0"> =&gt; &#54620;&#44397;&#50612; (Korean)</option>
+			<option value="?board=29.0"> =&gt; Português (Portuguese)</option>
+			<option value="?board=69.0"> ===&gt; Economia &amp; Mercado</option>
+			<option value="?board=70.0"> ===&gt; Garimpo de Bitcoins</option>
+			<option value="?board=10.0"> =&gt; &#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081; (Russian)</option>
+			<option value="?board=23.0"> ===&gt; &#1041;&#1080;&#1079;&#1085;&#1077;&#1089;</option>
+			<option value="?board=22.0"> ===&gt; &#1053;&#1086;&#1074;&#1080;&#1095;&#1082;&#1080;</option>
+			<option value="?board=21.0"> ===&gt; &#1052;&#1072;&#1081;&#1085;&#1077;&#1088;&#1099;</option>
+			<option value="?board=20.0"> ===&gt; &#1058;&#1088;&#1077;&#1081;&#1076;&#1077;&#1088;&#1099;</option>
+			<option value="?board=19.0"> ===&gt; &#1070;&#1088;&#1080;&#1089;&#1090;&#1099;</option>
+			<option value="?board=55.0"> ===&gt; &#1061;&#1072;&#1081;&#1087;&#1099;</option>
+			<option value="?board=18.0"> ===&gt; &#1056;&#1072;&#1079;&#1085;&#1086;&#1077;</option>
+			<option value="?board=66.0"> ===&gt; &#1050;&#1086;&#1076;&#1077;&#1088;&#1099;</option>
+			<option value="?board=72.0"> ===&gt; &#1060;&#1086;&#1088;&#1082;&#1080;</option>
+			<option value="?board=90.0"> ===&gt; &#1048;&#1076;&#1077;&#1080;</option>
+			<option value="?board=91.0"> ===&gt; &#1055;&#1086;&#1083;&#1080;&#1090;&#1080;&#1082;&#1072;</option>
+			<option value="?board=92.0"> ===&gt; &#1050;&#1086;&#1088;&#1079;&#1080;&#1085;&#1072;</option>
+			<option value="?board=108.0"> =&gt; Român&#259; (Romanian)</option>
+			<option value="?board=45.0"> =&gt; Skandinavisk</option>
+			<option value="?board=11.0"> =&gt; Other</option>
+		</select>&nbsp;
+		<input value="go" onclick="if (this.form.jumpto.options[this.form.jumpto.selectedIndex].value) window.location.href = 'https://bitcointalk.org/index.php' + this.form.jumpto.options[this.form.jumpto.selectedIndex].value;" type="button">
+	</form>
+</div></div><br>
+	</div><div style="text-align:center">Hosting provided by <a href="https://www.privateinternetaccess.com/">Private Internet Access</a>, a Bitcoin-accepting <a href="https://www.privateinternetaccess.com/" title="VPN">VPN</a>.</div>
+
+	<div id="footerarea" style="text-align: center; padding-bottom: 1ex;">
+		<script language="JavaScript" type="text/javascript"><!-- // --><![CDATA[
+			function smfFooterHighlight(element, value)
+			{
+				element.src = smf_images_url + "/" + (value ? "h_" : "") + element.id + ".gif";
+			}
+		// ]]></script>
+		<table align="center" border="0" cellpadding="3" cellspacing="0" width="100%">
+			<tbody><tr>
+				<td align="right" valign="middle" width="28%">
+					<a href="http://www.mysql.com/" target="_blank"><img id="powered-mysql" src="_post-Dateien/powered-mysql.gif" alt="Powered by MySQL" style="margin: 5px 16px;" onmouseover="smfFooterHighlight(this, true);" onmouseout="smfFooterHighlight(this, false);" height="20" width="54"></a>
+					<a href="http://www.php.net/" target="_blank"><img id="powered-php" src="_post-Dateien/powered-php.gif" alt="Powered by PHP" style="margin: 5px 16px;" onmouseover="smfFooterHighlight(this, true);" onmouseout="smfFooterHighlight(this, false);" height="20" width="54"></a>
+				</td>
+				<td style="white-space: nowrap;" align="center" valign="middle">
+					
+		<span class="smalltext" style="display: inline; visibility: visible; font-family: Verdana, Arial, sans-serif;"><a href="http://www.simplemachines.org/" title="Simple Machines Forum" target="_blank">Powered by SMF 1.1.18</a> | 
+<a href="http://www.simplemachines.org/about/copyright.php" title="Free Forum Software" target="_blank">SMF © 2006-2009, Simple Machines</a>
+		</span>
+				</td>
+				<td align="left" valign="middle" width="28%">
+					<a href="http://validator.w3.org/check/referer" target="_blank"><img id="valid-xhtml10" src="_post-Dateien/valid-xhtml10.gif" alt="Valid XHTML 1.0!" style="margin: 5px 16px;" onmouseover="smfFooterHighlight(this, true);" onmouseout="smfFooterHighlight(this, false);" height="20" width="54"></a>
+					<a href="http://jigsaw.w3.org/css-validator/check/referer" target="_blank"><img id="valid-css" src="_post-Dateien/valid-css.gif" alt="Valid CSS!" style="margin: 5px 16px;" onmouseover="smfFooterHighlight(this, true);" onmouseout="smfFooterHighlight(this, false);" height="20" width="54"></a>
+				</td>
+			</tr>
+		</tbody></table>
+		<script language="JavaScript" type="text/javascript"><!-- // --><![CDATA[
+			window.addEventListener("load", smf_codeFix, false);
+			function smf_codeFix()
+			{
+				var codeFix = document.getElementsByTagName ? document.getElementsByTagName("div") : document.all.tags("div");
+
+				for (var i = 0; i < codeFix.length; i++)
+				{
+					if (codeFix[i].className == "code" && (codeFix[i].scrollWidth > codeFix[i].clientWidth || codeFix[i].clientWidth == 0))
+						codeFix[i].style.overflow = "scroll";
+				}
+			}
+		// ]]></script>
+	</div>
+	<div id="ajax_in_progress" style="display: none;">Loading...</div>
+</body></html>

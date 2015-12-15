@@ -1,0 +1,6 @@
+
+****************************** FastFind 1.7 (c)FastFrench 2011 ********
+		Started  Tue Apr 02 02:12:19 2013
+
+            83.122mS|ChangeMode(7) => m_bDebugGraphique=1, m_DebugModeTxt=   3
+             17.098S|** Synthesis:

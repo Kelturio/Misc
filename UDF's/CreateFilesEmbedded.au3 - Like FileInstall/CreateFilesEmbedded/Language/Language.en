@@ -1,0 +1,32 @@
+; #INDEX# =======================================================================================================================
+; Title .........: CreateFilesEmbedded™
+; Module ........: Language
+; Author ........: Reaper HGN
+; Link ..........: http://www.autoitscript.com/forum/topic/132564-createfilesembeddedau3-like-fileinstall/#entry930932
+; Language ......: English (United States)
+; ===============================================================================================================================
+
+[0409]
+1 = Options for the output file.
+2 = Create a function based on the output name.
+3 = Adding patterns of User Defined Functions (UDF).
+4 = Only create the output file with the binary.
+5 = Adding native LZNT Windows compression.
+6 = Compression level
+7 = &Open File
+8 = Embedding file
+9 = Test
+10 = Default
+11 = Progress of conversion:
+12 = Exit
+13 = Converted Lines
+14 = Choose a file to embed
+15 = The file
+16 = no exist!
+17 = 'The test only with the option: "Create a function based on the output name" activated!'
+18 = Wait, creating the file. AU3 ->
+19 = Save the file as built
+20 = Compressing the file, wait...
+21 = Done!
+22 = The file
+23 = was embedded in the format .AU3!

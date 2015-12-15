@@ -1,0 +1,32 @@
+; #INDEX# =======================================================================================================================
+; Title .........: CreateFilesEmbedded™
+; Module ........: Language
+; Author ........: ricky03
+; Link ..........: http://www.autoitscript.com/forum/topic/132564-createfilesembeddedau3-like-fileinstall/page__st__20#entry957431
+; Language ......: French (Standard)
+; ===============================================================================================================================
+
+[040c]
+1 = Options pour le fichier de sortie
+2 = Créer une fonction basée sur le nom de sortie
+3 = Ajouter les entêtes pour l'UDF
+4 = Créer seulement un fichier avec le binaire
+5 = Ajouter la compression LZNT native de Windows
+6 = Niveau compression
+7 = &Ouvrir un fichier
+8 = Intégrer fichier
+9 = Test
+10 = Standard
+11 = Avancement conversion:
+12 = Quitter
+13 = Lignes converties:
+14 = Choisir un fichier pour
+15 = Fichier
+16 = Non!
+17 = 'Test uniquement disponible avec l'option: "Créer une fonction basée sur le nom de sortie" activée!'
+18 = Patientez, creation du fichier .au3 ->
+19 = Enregistrer le fichier tel que construit
+20 = Compression en cours...
+21 = Terminé!
+22 = Le fichier
+23 = a été converti en fichier .au3.

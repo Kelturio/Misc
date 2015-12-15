@@ -1,0 +1,32 @@
+; #INDEX# =======================================================================================================================
+; Title .........: CreateFilesEmbedded™
+; Module ........: Language
+; Author ........: João Carlos (jscript) - (C) DVI-Informática 2011.9-2012.9, dvi-suporte@hotmail.com
+; Link ..........: http://www.autoitscript.com/forum/topic/132564-createfilesembeddedau3-like-fileinstall/#entry923655
+; Language ......: Portuguese (Brazil)
+; ===============================================================================================================================
+
+[0416]
+1 = Opções do arquivo de saída.
+2 = Criar uma função baseada no nome de saída.
+3 = Adicionar padrões de Funções Definidas pelo Usuário (UDF).
+4 = Apenas criar o arquivo de saída com o binário.
+5 = Adicionar compressão LZNT nativa do Windows.
+6 = Nível de compressão:
+7 = &Abrir arquivo
+8 = Embutir arquivo
+9 = Testar
+10 = Padrão
+11 = Progresso de conversão:
+12 = Sair
+13 = Linhas convertidas:
+14 = Escolha um arquivo para embutir:
+15 = O arquivo
+16 = não existe!
+17 = 'O teste somente com a opção: "Criar uma função baseada no nome de saída" ativada!'
+18 = Aguarde, criando o arquivo .AU3 ->
+19 = Salvar o arquivo embutido como
+20 = Compactando o arquivo, aguarde...
+21 = Concluído!
+22 = O arquivo
+23 = foi embutido para o formato au3.

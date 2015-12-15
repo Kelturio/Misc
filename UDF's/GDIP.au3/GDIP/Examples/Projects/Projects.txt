@@ -1,0 +1,45 @@
+############
+    Note
+############
+APNG.au3 include CRC32.au3 written by Ward. You can download CRC32.au3 and more in
+http://www.autoitscript.com/forum/index.php?showtopic=76976
+thanks Ward.
+
+
+
+APNG and GIF are just from curiosity.
+The images used are from Mozilla Firefox's APNG_Specification page (sample files),
+availeable here https://wiki.mozilla.org/APNG_Specification
+
+..and a few from users post at the forum.
+
+APNG.au3:
+---------
+
+APNG provides better quality animated image file at the cost of file size.
+APNG.au3, right now, uses a run-time buffer that gets bigger and bigger as you
+add more frames. To make APNG.au3 better, it's required to write each frame to a file,
+then update the frame count of the file. Not a big problem, though.
+
+APNG was written with the help of PNG specification and APNG specification.
+
+GIF.au3:
+--------
+
+GIF provides small animated image file size at the cost of quality.
+GIF.au3 does write directly to a file (lol it should have been the opposite).
+
+GIF was written with the help of Rick Van den Bosch's blog:
+"HOWTO: create an animated GIF using .Net (C#)"
+http://bloggingabout.net/blogs/rick/archive/2005/05/10/3830.aspx
+
+Special thanks goes to wakillon for his Animated Splash examples and images ;3
+http://www.autoitscript.com/forum/index.php?showtopic=115391
+
+..and to UEZ's wonderful GDI+ Examples thread which the Lingering_Lines example
+is taken from. <3
+
+AdvancedButton.au3:
+-------------------
+
+Just a miserable attempt to make different buttons.
