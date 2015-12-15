@@ -1,0 +1,57 @@
+######################### Type following stuff for ur control: #########################
+
+IMPORTANT:
+Leave out the brackets ( --> { } <-- )
+
+{!}  
+{#}   
+{+}     
+{^} 
+{{}      
+{}}    
+{SPACE}   
+{ENTER}
+{ALT}     
+{BACKSPACE} or {BS}
+{DELETE} or {DEL}  
+{UP}   
+{DOWN}    
+{LEFT}    
+{RIGHT}  
+{HOME}    
+{END}   
+{ESCAPE} or {ESC} 
+{INSERT} or {INS}    
+{PGUP}   
+{PGDN}    
+{F1} - {F12}  
+{TAB}     
+{PRINTSCREEN} 
+{LWIN}    
+{RWIN}   
+{NUMLOCK} 
+{BREAK}   
+{PAUSE} 
+{CAPSLOCK}   
+{NUMPAD0} - {NUMPAD9}  
+{NUMPADMULT}     
+{NUMPADADD}    
+{NUMPADSUB}    
+{NUMPADDIV}    
+{NUMPADDOT}      
+{NUMPADENTER}  
+{APPSKEY}     
+{LALT} 
+{RALT}   
+{LCTRL}  
+{RCTRL}  
+{LSHIFT} 
+{RSHIFT}   
+{SLEEP} 
+{ALTDOWN}   
+{SHIFTDOWN}   
+{CTRLDOWN} 
+{LWINDOWN}    
+{RWINDOWN}     
+{ASC nnnn} 
+Alphabet {a}, {b}, {c}.....

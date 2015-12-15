@@ -1,0 +1,136 @@
+=== HOWTO HFFF BOT V1.1 ===
+(Achtung: Wahrscheinlich nicht ganz aktuell)
+
+->->-> Deutsch:
+
+-> Vorraussetzungen:
+
+Ein wenig was in der Birne :), TexMod (und das Wissen es wie zu benutzen), sämtliche Helden freigeschaltet, sowie folgende Orte:
+
+- Lutgardis-Wintergarten
+- Brechermulde
+- Kaineng
+- Zufallsarena
+- Großer Tempel des Balthasar
+- Der Jadesteinbruch (Kurzick & Luxon)
+- Fort Espenwald (Kurzick & Luxon)
+
+-> Einstellungen:
+
+Auflösung:                         Vollbild - 1280 x 1024
+Interface-Größe:                   Groß
+Text Sprache:                      Deutsch
+
+Bei "Fenster nicht schließen, wenn ich Escape drücke" KEINEN Haken machen
+(ich habe nirgends einen gesetzt, weiß aber nicht ob der Rest auch Auswirkungen 
+auf den Bot hat)!
+
+Ansonsten Grafik runterschrauben um Ruckler zu vermeiden - die sind nämlich
+nicht gut für den Bot :)
+
+Aktion: Ausführen                                 -> Leertaste
+Aktion: Gruppe befehligen                         -> Komma (ZB)
+Aktion: Held 1 befehligen                         -> 1 (ZB)     
+Aktion: Held 2 befehligen                         -> 2 (ZB)
+Aktion: Held 3 befehligen                         -> 3 (ZB)
+Aktion: Held 1 befehlen, Fertigkeit 1 zu benutzen -> 7 (ZB)
+Aktion: Held 1 befehlen, Fertigkeit 3 zu benutzen -> 4 (ZB)
+Aktion: Held 2 befehlen, Fertigkeit 1 zu benutzen -> 8 (ZB)
+Aktion: Held 2 befehlen, Fertigkeit 3 zu benutzen -> 5 (ZB)
+Aktion: Held 3 befehlen, Fertigkeit 1 zu benutzen -> 9 (ZB)
+Aktion: Held 3 befehlen, Fertigkeit 3 zu benutzen -> 6 (ZB)
+Aktion: Held 3 befehlen, Fertigkeit 8 zu benutzen -> 0 ; Null - die normale Null,
+                                                       ; NICHT auf dem ZB
+Anwählen: Nächstbefindlichen Verbündeten          -> v            
+Anwählen: Nächsten Gegenstand                     -> 0 (ZB)
+Anzeige: Gruppe öffnen                            -> P
+Anzeige: Weltkarte öffnen                         -> M
+Anzeige: Gilde öffnen                             -> G
+Bewegung: Automatisches Rennen                    -> R
+Bewegung: Nach links drehen                       -> A
+Bewegung: Nach rechts drehen                      -> D
+Bewegung: Seitlich nach links                     -> Q
+Bewegung: Seitlich nach rechts                    -> E
+Bewegung: Vorwärts gehen                          -> W
+Chat: Chat öffnen                                 -> Enter
+
+
+Interface (vgl. "Screenshot.jpeg"):
+
+1) Gruppenfenster in die obere rechte Ecke schieben und mindestens so groß
+   ziehen, dass es alle 7 Namen anzeigt. Größer ist nicht schlimm.
+
+2) Missionskarte (=Minimap =U) in die obere linke Ecke schieben und so klein
+   wie möglich machen. Anschließend "INTERFACE (MINIMAP).au3" öffnen. Die Minimap sollte
+   nun genau so groß sein wie sie es auf dem Screenshot ist.
+   
+   Um zu testen ob es geklappt hat "AutoIt v3 Window Info" benutzen:
+     "Position: 928, 1023 -> you can see a mouse cursor to change the window's size.
+      Position: 929, 1023 -> no visible mouse cursor at all."
+
+3) Gruppensuche auch in die obere linke Ecke schieben und auf ca. die selbe Größe ziehen. Größer ist ok, aber kleiner sollte 
+   sie nicht sein.
+
+4) Gildenfenster ebenfalls in die obere linke Ecke. Größe: so klein wie möglich.
+
+5) GuildWars via Texmod mit "MARKERS.tpf" und "NOFOG.tpf" (NOFOG.tpf wurde
+   von Randy Avon erstellt
+   (vgl. "http://wiki.guildwars.com/wiki/Guide_to_modifying_in-game_graphics/Player_made_modifications/UI_enhancements"))
+   TexMod Anleitungen gibt es schon genug im Internet, daher werde ich da nicht weiter darauf eingehen.
+
+6) - Für Kurzick Punkte nach Lutgardis-Wintergarten reisen, für Luxon Punkte in die Brechermulde.
+   - AB JETZT WEDER BEWEGEN, NOCH DIE KAMERAPOSITION VERÄNDERN!
+   - NPCs einladen (Reihenfolge beachten!):
+
+            - Kurzick: Akolyth Sosuke, 
+                       Zhed Schattenhuf, 
+                       Vekk, 
+                       Lukas, 
+                       Devona, 
+                       Prof. Gai
+
+            - Luxon:   Zenmai,
+                       Anton,
+                       Kahmu,
+                       Talon Silberflügel
+
+Nicht vergessen die Templates zu laden (zu finden im Ordner "Templates").
+Es ist von Vorteil den Helden Waffen zu geben, die die Dauer von Verzauberungen verlängern.
+Außerdem sollte ihr eine Fernkampfwaffe in der Hand halten (Stab, Stecken, Bogen usw.).
+
+-> Den Bot starten:
+
+Jenachdem ob ihr Kurzick oder Luxon Punkte wollt, und welchen Modus ihr wählt (mehr dazu später)
+müsst ihr versch. weitere Einstellungen vornehmen.
+
+Kurzick (autom.):      Minimap öffnen. Aus der Karte so oft wie möglich herauszoomen, nun zweimal hineinzoomen.
+                       Minimap und Gruppenfenster müssen offen sein.
+Kurzick (semi-autom.): Minimap öffnen. Aus der Karte so oft wie möglich herauszoomen, nun zweimal hineinzoomen.
+                       Minimap muss geschlossen sein (sprich: nicht sichtbar, denn sie wird von alleine geöffnet wenn es nötig ist), 
+                       Gruppenfenster hingegen offen.
+Luxon (autom.):        Minimap öffnen. Aus der Karte so oft wie möglich herauszoomen und NICHT wieder hineinzoomen.
+                       Minimap und Gruppenfenster müssen offen sein.
+Luxon (semi-autom.):   Minimap öffnen. Aus der Karte so oft wie möglich herauszoomen und NICHT wieder hineinzoomen.
+                       Minimap muss geschlossen sein (sprich: nicht sichtbar, denn sie wird von alleine geöffnet wenn es nötig ist), 
+                       Gruppenfenster hingegen offen.
+
+- Wahlweise "HFFF Bot v1.1.exe" ausführen oder über "HFFF Bot v1.1.au3" starten.
+  Der Rest erklärt sich von selbst :)
+
+Erwähnenswerte Funktionen: 
+- Plus und Minus auf dem ZB erhöhen bzw. erniedrigen $mousespeed nun direkt (ToolTip oben links zeigt den Wert an).
+- Ein Druck auf die "Ende"-Taste beendet das Script.
+
+ERKLÄRUNG ZU DEN VERSCHIEDENEN MODI:
+
+Der automatische Modus funktioniert, wie nicht anders zu erwarten, vollkommen automatisch.
+Es werden solange Punkte gesammelt bis das Script beendet wird. Perfekt für die Nacht
+Der semi-automatische Modus hingegen ist zu benutzen wenn man selber etwas machen will.
+Anstatt selbst aus der Stadt zu rennen muss dies nun vom Benutzer übernommen werden, was das
+Aufdecken erschweren sollte. Außerdem kann man hier Freunde mitziehen oder andere Leute mitnehmen und 
+ein wenig Gold verlangen :)
+Nachdem das Script in diesem Modus gestartet wurde muss man aus der Stadt rennen und "Pos1" (a.k.a. "Home") drücken.
+Die Minimap wird geöffnet, die Quest beendet, die Belohnung angenommen, und die Minimap wieder geschlossen.
+Nun muss man selber wieder zurückreisen und alles beginnt von vorne.
+
+
