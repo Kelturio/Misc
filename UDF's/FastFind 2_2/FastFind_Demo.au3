@@ -12,7 +12,7 @@ global const $WINDOW_TITLE = "" ; TITLE of the target Window
 FFSetDebugMode($DEBUG_GRAPHIC) 	 ; Enable advanced (graphical) debug mode, so you will have traces + graphical feedback
 FFSetDefaultSnapShot(0)
 
-TrayTip("Démo FastFind", "F1 to detect a blue area, F2 for a black or white area, "&@LF&"F3 to bind with either a Notepad or [Active] Window, "&@LF&"F4 to bind with full screen, "&@LF&"F5 to detect changes since last capture, "&@LF&"F6 to repeatedly scan for changes, "&@LF&"ESC to exit",50000)
+TrayTip("DÃ©mo FastFind", "F1 to detect a blue area, F2 for a black or white area, "&@LF&"F3 to bind with either a Notepad or [Active] Window, "&@LF&"F4 to bind with full screen, "&@LF&"F5 to detect changes since last capture, "&@LF&"F6 to repeatedly scan for changes, "&@LF&"ESC to exit",50000)
 HotKeySet("{F1}", "DetectBleu")
 HotKeySet("{F2}", "DetectBlancNoir")
 HotKeySet("{F3}", "SelectWindow")
@@ -35,7 +35,7 @@ Func DetectBleu()
 	local $ShadeVariation=0
 	local $ResBleu
 	do
-		$ResBleu = FFNearestSpot(43, 100, 100, 100, 0x000000FF, $ShadeVariation, 0, 0, 0, 0, true) ; Force un nouveau snapShot à chaque passage (cf DetectBlancNoir pour optimisation simple possible)
+		$ResBleu = FFNearestSpot(43, 100, 100, 100, 0x000000FF, $ShadeVariation, 0, 0, 0, 0, true) ; Force un nouveau snapShot Ã  chaque passage (cf DetectBlancNoir pour optimisation simple possible)
 		if (Not IsArray($ResBleu)) Then $ShadeVariation += 5
 	until (IsArray($ResBleu) OR $ShadeVariation >250)
 	if (IsArray($ResBleu)) Then
@@ -63,7 +63,7 @@ Func DetectBlancNoir()
 	local $FirstLoop = true ; This will be used to optimize the processing, forcing to do a new snapshot the first but not in the next iterations, making them much faster
 	do
 		; [0, 0, 0, 0] => FullScreen, 10 => Size of the area to find, 100 => Number of pixels in the area, [0, 0] reference point, -1 => Use the Color list, $ShadeVariation => Tolerancy on the Color, true => Force to take a new SnapShot only on the first iteration
-		$ResBlancNoir = FFNearestSpot(10, 100, 0, 0, -1, $ShadeVariation, 0, 0, 0, 0, $FirstLoop) ; Ne force pas un nouveau snapShot si il y en a déjà un
+		$ResBlancNoir = FFNearestSpot(10, 100, 0, 0, -1, $ShadeVariation, 0, 0, 0, 0, $FirstLoop) ; Ne force pas un nouveau snapShot si il y en a dÃ©jÃ  un
 		$FirstLoop = false
 		if (Not IsArray($ResBlancNoir)) Then $ShadeVariation += 2
 
@@ -94,7 +94,7 @@ Func SelectWindow()
 	FFTrace("   ** SelectWindow => Title of the Window: "&WinGetTitle($hWnd)&" Class:"&_WinAPI_GetClassName($hWnd)&@lf) ; Put this in the different debugging channels as set with FFSetDebugMode
 EndFunc
 
-; Sélectionne un écran
+; SÃ©lectionne un Ã©cran
 Func SelectScreen()
 	FFTrace(@lf&"   ** SelectScreen"&@lf&"") ; Put this in the different debugging channels as set with FFSetDebugMode
 	FFSetWnd(0)
@@ -105,10 +105,10 @@ EndFunc
 Func ShowChanges()
 	FFTrace(@lf&"   ** ShowChanges"&@lf) ; Put this in the different debugging channels as set with FFSetDebugMode
 	FFSetDebugMode($DEBUG_DEFAULT) ; We keep traces in a file, but no graphical display, to avoid adding our own changes on the screen
-	FFSetDefaultSnapShot(1) ; We select Slot N°1 as the default for next operations
+	FFSetDefaultSnapShot(1) ; We select Slot NÂ°1 as the default for next operations
 	FFSnapShot()
 	FFSetDebugMode($DEBUG_GRAPHIC)	 ; Include graphical feedback to see the area that have changed
-	$Res = FFLocalizeChanges(0, 1) ; We're loonking for differences bestween SnatShot N°0 and N°1
+	$Res = FFLocalizeChanges(0, 1) ; We're loonking for differences bestween SnatShot NÂ°0 and NÂ°1
 	if @Error Then
 		TrayTip("ShowChanges","No change detected",2000)
 		FFTrace("   ** ShowChanges => No change detected !"&@lf) ; Put this in the different debugging channels as set with FFSetDebugMode
@@ -116,8 +116,8 @@ Func ShowChanges()
 		TrayTip("ShowChanges","Change detected : ("&$Res[0]&","&$Res[1]&","&$Res[2]&","&$Res[3]&"), "&$Res[4]&" pixels are different",2000)
 		FFTrace("   ** ShowChanges => Change detected : ("&$Res[0]&","&$Res[1]&","&$Res[2]&","&$Res[3]&"), "&$Res[4]&" pixels are different"&@lf) ; Put this in the different debugging channels as set with FFSetDebugMode
 	EndIf
-	FFSetDefaultSnapShot(0) ; Back on SnapShot N°0 by default for next operations	
-	FFSnapShot() ; And take New SnapShot (N°0)
+	FFSetDefaultSnapShot(0) ; Back on SnapShot NÂ°0 by default for next operations	
+	FFSnapShot() ; And take New SnapShot (NÂ°0)
 EndFunc
 
 ; We continuously watch changes on the screen (or selected Window, if any), showing them when any occure (Graphical debug + Tray Message)

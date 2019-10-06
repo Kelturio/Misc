@@ -121,7 +121,7 @@ Func TimeSpan($dif, $Nb)
 	if ($res >= 0.010) Then
 		return " = "&Round($res*1000)&" mS ("&$Nb&" runs)"&@lf
 	Else
-		return " = "&Round($res*1000000)&" µS ("&$Nb&" runs)"&@lf
+		return " = "&Round($res*1000000)&" ÂµS ("&$Nb&" runs)"&@lf
 	EndIf
 EndFunc
 ProgressOff()
